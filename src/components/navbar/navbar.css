@@ -1,0 +1,129 @@
+.eh__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2rem 6rem;
+}
+
+.eh__navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.eh__navbar-links_logo {
+  display: table;
+  border: 5px solid;
+  border-image: var(--gradient-bar);
+  border-image-slice: 1;
+  text-align: center;
+  
+  margin-right: auto;
+  padding: 1rem;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+.eh__navbar-links_logo:hover {
+  scale: 1.05;
+  border-image: var(--gradient-bar-reversed);
+  border-image-slice: 1;
+}
+
+.eh__navbar-links_logo p {
+  display: table-cell;
+  vertical-align: middle;
+
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.eh__navbar-links_logo span {
+  color: var(--color-subtitle);
+}
+
+.eh__navbar-links_container {
+  display: flex;
+}
+
+.eh__navbar-links_container p,
+.eh__navbar-menu_container p {
+  font-size: 18px;
+  font-weight: 500;
+
+  margin: 0 4rem;
+  cursor: pointer;
+
+  transition: all .3s ease
+}
+
+.eh__navbar-links_container p:hover,
+.eh__navbar-menu_container p:hover {
+  scale: 1.2;
+}
+
+#final-link {
+  margin: 0 0 0 4rem;
+}
+
+.eh__navbar-menu {
+  margin-left: 1rem;
+  display: none;
+  position: relative;
+}
+
+.eh__navbar-menu svg {
+  cursor: pointer;
+}
+
+.eh__navbar-menu_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+
+  text-align: end;
+  border: 5px solid;
+  border-image: var(--gradient-bar);
+  border-image-slice: 1;
+
+  padding: 2rem;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  margin-top: 1rem;
+  min-width: 210px;
+  box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
+}
+
+.eh__navbar-menu_container p {
+  margin: 1rem 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .eh__navbar-links_container {
+    display: none;
+  }
+  .eh__navbar-menu {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .eh__navbar {
+    padding: 2rem 4rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .eh__navbar {
+    padding: 2rem;
+  }
+  .eh__navbar-menu_container {
+    top: 20px;
+    margin-top: 2.5rem;
+  }
+}

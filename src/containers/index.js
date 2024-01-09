@@ -1,0 +1,6 @@
+export {default as Contact } from './contact/Contact.jsx'
+export {default as Footer } from './footer/Footer.jsx'
+export {default as Header } from './header/Header.jsx'
+export {default as Home } from './home/Home.jsx'
+export {default as Projects } from './projects/Projects.jsx'
+export {default as WID } from './wid/WID.jsx'
