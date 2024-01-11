@@ -7,27 +7,28 @@ import './home.css'
 const Home = () => {
   return (
     <div className='eh__home section__padding' id='home'>
-      <div className='gradient__bar'></div>
-      
-      <div className='eh__home-content'>
 
+      <div className='eh__home-welcome'>
+        <div className='gradient__bar'></div>
 
-        <h1 className='gradient__text'>Welcome</h1>
-
-        <div className='eh__home-content_subtext'>
-          <p className='subtext-larger'>Full Stack Web Development</p>
-          <p className='subtext-larger' id='final-subtext-larger'>Front End Design</p>
-          <p>Creating applications from start to finish with clean and efficient design.</p>
+        <div className='eh__home-text'>
+          <h1 className='gradient__text'>Welcome</h1>
+          <p className='text-lg text-1'>Full Stack Web Development</p>
+          <p className='text-lg text-2' id='final-text-lg'>Front End Design</p>
+          <p className='text-3'>Creating applications from start to finish with clean and efficient design.</p>
         </div>
 
-        <div className='eh__home-image'>
+      </div>
+
+      <div className='eh__home-img'>
+        <div className='eh__img-container'>
           <img className='rotate-center' src={baseImageHome} alt='placeholder'/>
           <img className='slide-left' src={baseEllipseHome} alt='placeholder'/>
           <img className='portrait' src={portrait} alt='placeholder'/>
         </div>
-
-
       </div>
+
+
     </div>
   )
 }

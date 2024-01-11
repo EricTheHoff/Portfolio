@@ -116,6 +116,10 @@
   .eh__navbar {
     padding: 2rem 4rem;
   }
+  .eh__navbar-menu_container {
+    min-width: 180px;
+    right: -20px;
+  }
 }
 
 @media screen and (max-width: 550px) {
