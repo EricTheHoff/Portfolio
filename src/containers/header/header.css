@@ -3,101 +3,212 @@
   justify-content: space-between;
 }
 
-.flex-item-1 {
-  width: 28rem;
-  display: flex;
-  align-items: center;
-  margin-right: 2rem;
+.fi-1,
+.fi-2 {
+  width: 40rem;
+  height: 40rem;
 }
 
-.flex-item-2 {
-  width: 28rem;
+.fi-1 .image {
+  width: 130%;
+  margin-top: -6rem;
 }
 
-.bar-div {
-  border: 2px dotted pink;
-  min-height: 400px;
-  min-width: 7%;
-}
-
-.text-div {
-  position: relative;
-  min-height: 400px;
+.fi-1 img {
   width: 100%;
-  margin-left: 1rem;
 }
 
-.text-div p.title {
-  position: absolute;
-  top: -22px;
+.fi-2 {
+  display: flex;
+}
+
+.bar {
+  background: var(--gradient-bar);
+  min-width: 1.875rem;
+  height: 100%;
+  margin-left: 3.625rem;
+}
+
+.text h1, p {
+  text-align: right;
+}
+
+.text .btn {
+  text-align: center;
+  margin-left: 12rem;
+}
+
+.text h1 {
   font-size: 80px;
+  font-weight: 800;
+  margin-bottom: 10rem;
 }
 
-.text-div p.sb-1 {
-  font-size: 26px;
-  position: absolute;
-  bottom: 6rem;
+.text p {
+  color: #FFF;
+  text-align: right;
+  font-family: Barlow;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+
+  margin-bottom: 7rem;
 }
 
-.text-div p.sb-2 {
-  font-size: 26px;
-  position: absolute;
-  bottom: 4rem;
-}
-
-.text-div p.desc {
-  font-size: 18px;
-  position: absolute;
-  bottom: 0;
+.text button {
+  width: 170px;
+  height: 55px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(180deg, #9191E9 0%, #2D898B 100%);
+  color: #FFF;
+  font-family: var(--font-family);
+  font-size: 25px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1050px) {
   .container {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
-  .flex-item-1 {
-    margin-bottom: 2rem;
+  .fi-1,
+  .fi-2 {
+    width: 25rem;
+    height: 25rem;
+  }
+  .fi-1 {
+    margin-top: 12rem;
+  }
+  .text h1 {
+    font-size: 70px;
+    margin-bottom: 3rem;
+  }
+  .text p {
+    font-size: 20px;
+    margin-bottom: 3rem;
+  }
+  .text button {
+    width: 140px;
+    height: 35px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .text .btn {
+    margin-left: 5rem;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .flex-item-1,
-  .flex-item-2 {
-    width: 23rem;
+  .fi-1,
+  .fi-2 {
+    width: 22rem;
+    height: 22rem;
   }
-  .flex-item-2 img {
-    max-width: 100%;
+  .fi-1 {
+    margin-top: 6rem;
   }
-  .text-div {
-    min-height: 368px;
+  .text h1 {
+    font-size: 50px;
+    margin-bottom: 1rem;
   }
-  .text-div p.title {
-    font-size: 60px;
+  .text p {
+    font-size: 18px;
+    margin-bottom: 1.5rem;
   }
-  .bar-div {
-    min-height: 368px;
+  .text button {
+    font-size: 18px;
+    width: 130px;
+    height: 32px;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .flex-item-1,
-  .flex-item-2 {
-    width: 19rem;
+  .fi-1,
+  .fi-2 {
+    width: 100%;
+    height: 20em;
   }
-  .text-div {
-    min-height: 304px;
+  .fi-1 {
+    margin-top: 7rem;
   }
-  .text-div p.title {
+  .bar {
+    margin-left: 2rem;
+    min-width: 1.45rem;
+  }
+  .text h1 {
     font-size: 50px;
+    margin-bottom: 1.5rem;
   }
-  .text-div p.sb-1,
-  .text-div p.sb-2 {
-    font-size: 22px;
+  .text p {
+    font-size: 18px;
+    margin-bottom: 2.5rem;
   }
-  .text-div p.desc {
-    font-size: 16px;
+  .text .btn {
+    margin-left: 7rem;
   }
-  .bar-div {
-    min-height: 304px;
+  .text button {
+    font-size: 18px;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .fi-1,
+  .fi-2 {
+    width: 100%;
+    height: 15em;
+  }
+  .fi-1 {
+    margin-top: 12rem;
+  }
+  .bar {
+    min-width: 1.3rem;
+    height: 320px;
+  }
+  .text h1 {
+    font-size: 46px;
+    margin-bottom: 1rem;
+  }
+  .text p {
+    font-size: 16px;
+    margin-bottom: 3rem;
+  }
+  .text .btn {
+    margin-left: 3rem;
+  }
+  .text button {
+    font-size: 17px;
+  }
+}
+
+/* @media screen and (max-width: 360px) {
+  .fi-1,
+  .fi-2 {
+    width: 100%;
+    height: 15em;
+  }
+  .fi-1 {
+    margin-top: 12rem;
+  }
+  .bar {
+    margin-left: 2rem;
+    min-width: 1.3rem;
+    height: 340px;
+  }
+  .text h1 {
+    font-size: 46px;
+    margin-bottom: 1rem;
+  }
+  .text p {
+    font-size: 17px;
+    margin-bottom: 1.5rem;
+  }
+  .text .btn {
+    margin-left: 3rem;
+  }
+  .text button {
+    font-size: 17px;
+  }
+} */

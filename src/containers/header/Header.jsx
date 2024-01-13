@@ -1,24 +1,30 @@
 import React from 'react'
-import portrait from '../../assets/portrait.png'
+import widImage from '../../assets/widImage.svg'
 import './header.css'
 
 const Header = () => {
   return (
-    <div className='container section__padding'>
-      <div className='flex-item-1'>
-        <div className='bar-div'></div>
-        <div className='text-div'>
-          <p className='title'>Welcome</p>
-          <p className='sb-1'>Subtext 1</p>
-          <p className='sb-2'>Subtext 2</p>
-          <p className='desc'>Creating applications from start to
-            finish with clean and efficient design.</p>
+    <div className='container section__padding' id='wid'>
+      <div className='fi-1'>
+        <div className='image'>
+          <img src={widImage} alt='placeholder'/>
         </div>
       </div>
-      <div className='flex-item-2'>
-        <div className='img-div'>
-          <img src={portrait} alt='placeholder'/>
+      <div className='fi-2'>
+        <div className='text'>
+          <h1>What I Do</h1>
+          <p>I create full stack web applications
+            and sites using JavaScript, HTML, CSS,
+            and frameworks such as React, NodeJS,
+            and PostgreSQL.<br/>
+            Interested in seeing some of my work?
+            Click the button to see more!
+          </p>
+          <div className='btn'>
+            <button type='button'>My Work</button>
+          </div>
         </div>
+        <div className='bar'></div>
       </div>
     </div>
   )

@@ -5,7 +5,7 @@
   padding: 0;
   /* This includes the padding and border into an elements width/height. */
   box-sizing: border-box;
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 body {

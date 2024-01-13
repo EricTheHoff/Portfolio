@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { List, XCircle } from 'react-bootstrap-icons';
+import classNames from 'classnames';
 import logoEllipse from '../../assets/logoEllipse.svg'
 import './navbar.css';
 
@@ -17,7 +18,7 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
 
   return (
-    <div className='eh__navbar'>
+    <div className={classNames('eh__navbar', { 'menu-open' : toggleMenu })}>
       <div className='eh__navbar-links'>
 
         <div className='eh__navbar-links_logo'>
