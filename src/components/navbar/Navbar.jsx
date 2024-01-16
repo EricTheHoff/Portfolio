@@ -18,7 +18,7 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
 
   return (
-    <div className={classNames('eh__navbar', { 'menu-open' : toggleMenu })}>
+    <div className={classNames('eh__navbar', { 'menu-open' : toggleMenu })} id='navbar'>
       <div className='eh__navbar-links'>
 
         <div className='eh__navbar-links_logo'>
@@ -44,7 +44,6 @@ const Navbar = () => {
             </div>
           )}
         </div>
-
       </div>
     </div>
   )

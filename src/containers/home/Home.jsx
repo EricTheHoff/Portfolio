@@ -1,34 +1,63 @@
-import React from 'react'
-import baseImageHome from '../../assets/baseImageHome.svg'
-import baseEllipseHome from '../../assets/baseEllipseHome.svg'
+import React, { useEffect } from 'react'
 import portrait from '../../assets/portrait.png'
+import homeImage from '../../assets/homeImage.svg'
 import './home.css'
 
 const Home = () => {
+  const setMinHeight = () => {
+    const navbarHeight = document.getElementById('navbar').offsetHeight
+    const homePage = document.querySelector('.eh__home')
+    homePage.style.minHeight = `calc(100vh - ${navbarHeight}px)`
+  }
+
+  useEffect(() => {
+    setMinHeight()
+
+    return (
+      () => {
+        window.removeEventListener('resize', setMinHeight)
+      }
+    )
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('resize', setMinHeight)
+
+    return (
+      () => {
+        window.removeEventListener('resize', setMinHeight)
+      }
+    )
+  }, [])
+
   return (
     <div className='eh__home section__padding' id='home'>
 
-      <div className='eh__home-welcome'>
-        <div className='gradient__bar'></div>
-
-        <div className='eh__home-text'>
-          <h1 className='gradient__text'>Welcome</h1>
-          <p className='text-lg text-1'>Full Stack Web Development</p>
-          <p className='text-lg text-2' id='final-text-lg'>Front End Design</p>
-          <p className='text-3'>Creating applications from start to finish with clean and efficient design.</p>
+      <div className='eh__home-text'>
+        <div className='eh__home-text__bar'></div>
+        <div className='eh__home-text__content'>
+          <h1>Welcome</h1>
+          <p>Howdy! My name is Eric Hoffman, and I'm a full-stack web developer based in Utah Valley.
+              I have a passion for creating and working on interesting, innovative projects. To me, web
+              development offers a fantastic balance of technical problem-solving and creativity. When I'm not wondering why
+              a div isn't aligning how I want, I like to spend my time reading, watching shows with
+              my fiancée, and getting tossed off cliffs in Baldurs Gate III. Feel free to reach out with
+              any questions or proposals!
+          </p>
+          <h2>Front End Design<br/>
+              Full Stack Web Applications
+          </h2>
+          <h3>Creating projects from start to finish<br/>
+              with clean and efficient design.
+          </h3>
         </div>
-
       </div>
 
-      <div className='eh__home-img'>
-        <div className='eh__img-container'>
-          <img className='rotate-center' src={baseImageHome} alt='placeholder'/>
-          <img className='slide-left' src={baseEllipseHome} alt='placeholder'/>
-          <img className='portrait' src={portrait} alt='placeholder'/>
-        </div>
+      <div className='eh__home-image'>
+        <img src={portrait} alt='placeholder'/>
+        <img src={homeImage} alt='placeholder'/>
       </div>
-
-
+      
     </div>
   )
 }
