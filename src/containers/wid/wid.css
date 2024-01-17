@@ -2,6 +2,8 @@
 .eh__wid {
   display: flex;
   justify-content: space-between;
+
+  margin-bottom: 3rem;
 }
 
 /* Sizing for text and image containers. */
