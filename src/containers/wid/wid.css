@@ -1,0 +1,290 @@
+/* Container for What I Do */
+.eh__wid {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Sizing for text and image containers. */
+.eh__wid-image,
+.eh__wid-text {
+  width: 40rem;
+  height: 40rem;
+  transition: all .5s ease-in-out;
+}
+
+/* Using flex to organize the bar and text content. */
+.eh__wid-text {
+  display: flex;
+
+  margin-left: 3rem;
+}
+
+/* Hover effects for devices that can hover with a mouse/stylus. */
+@media (hover: hover) and (pointer: fine) {
+  .eh__wid:hover {
+    .eh__wid-text {
+      transform: scale(1.05);
+    }
+    .eh__wid-text__bar {
+      height: 100%;
+    }
+    .eh__wid-text__content h1, h2, p, button {
+      margin-right: 2rem;
+    }
+    .eh__wid-text__content h1 {
+      transform: scale(1.05);
+    }
+    .eh__wid-text__content h2 {
+      margin-top: 8rem;
+    }
+    .eh__wid-text__content button {
+      cursor: pointer;
+    }
+    .eh__wid-text__content p {
+      opacity: 1;
+    }
+    .eh__wid-btn {
+      opacity: 1;
+    }
+    .eh__wid-image {
+      opacity: 1;
+    }
+  }
+  .eh__wid-text__content button:hover {
+    --color-1: #9191E9;
+    --color-2: #2D898B;
+  }
+}
+
+/* Colored bar. */
+.eh__wid-text__bar {
+  background: var(--gradient-bar);
+  min-width: 1.875rem;
+  height: 35%;
+  transition: all .5s ease-in-out;
+}
+
+/* Small margin so text content doesn't overlap image on smaller resolution monitors. */
+.eh__wid-text__content {
+  margin-right: 2rem;
+}
+
+.eh__wid-text__content h1, h2 {
+  text-transform: uppercase;
+  text-align: right;
+  transition: all .5s ease-in-out;
+}
+
+.eh__wid-text__content h1 {
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  
+  margin-bottom: 1rem;
+}
+
+.eh__wid-text__content h2 {
+  color: var(--color-subtitle);
+  font-size: 28px;
+  
+  margin-top: -19rem;
+}
+
+.eh__wid-text__content p {
+  opacity: 0;
+  font-size: 25px;
+  line-height: 33px;
+  text-align: right;
+  transition: all .5s ease-in-out;
+}
+
+/* Centers My Work button. */
+.eh__wid-btn {
+  opacity: 0;
+  text-align: center;
+  transition: all .5s ease-in-out;
+  
+  margin: 2rem 0 0 10rem;
+}
+
+/* Color props defined to help smoothly transition gradient colors. */
+@property --color-1 {
+  syntax: '<color>';
+  initial-value: #2D898B;
+  inherits: false;
+}
+
+@property --color-2 {
+  syntax: '<color>';
+  initial-value: #9191E9;
+  inherits: false;
+}
+
+.eh__wid-text__content button {
+  width: 10.5rem;
+  height: 3.5rem;
+  border: none;
+  border-radius: 50px;
+  color: #FFF;
+  background: linear-gradient(var(--color-1), var(--color-2));
+  font-family: var(--font-family);
+  font-size: 25px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: --color-1 .5s, --color-2 .5s ease-in-out;
+}
+
+.eh__wid-image {
+  opacity: 0;
+}
+
+.eh__wid-image img {
+  width: 130%;
+
+  margin-top: -5.5rem;
+}
+
+@media screen and (max-width: 1367px) {
+  /* Adjusting bar height to account for margin adjustments. */
+  .eh__wid-text__bar {
+    height: 38%;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .eh__wid:hover {
+      .eh__wid-text__bar {
+        height: 108%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  /* Altering flex direction to stack elements in columns. */
+  .eh__wid {
+    flex-direction: column-reverse;
+  }
+  .eh__wid-image {
+    opacity: 1;
+
+    margin-top: 6rem;
+  }
+  .eh__wid-text {
+    align-self: flex-end;
+
+    margin-left: 0;
+  }
+  .eh__wid-text__bar {
+    height: 100%;
+  }
+  .eh__wid-text__content h2 {
+    margin-top: 8.5rem;
+  }
+  .eh__wid-text__content p {
+    opacity: 1;
+  }
+  .eh__wid-btn {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  /* Centering the text container on the flex cross axis. */
+  .eh__wid-text {
+    align-self: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .eh__wid-text,
+  .eh__wid-image {
+    width: 25rem;
+    height: 25rem;
+  }
+  .eh__wid-image {
+    margin-top: 9rem;
+  }
+  .eh__wid-text__content h1 {
+    font-size: 50px;
+  }
+  .eh__wid-text__content h2 {
+    font-size: 22px;
+
+    margin-top: 1rem;
+  }
+  .eh__wid-text__content p {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  .eh__wid-text__bar {
+    min-width: 1.45rem;
+    height: 115%;
+  }
+  .eh__wid-btn {
+    text-align: right;
+
+    margin: 2rem 0 2rem 0;
+  }
+  .eh__wid-text__content button {
+    width: 8.5rem;
+    height: 2.5rem;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .eh__wid-text,
+  .eh__wid-image {
+    width: 20rem;
+    height: 20rem;
+  }
+  .eh__wid-image {
+    margin-top: 17rem;
+  }
+  .eh__wid-text__content h1 {
+    font-size: 40px;
+  }
+  .eh__wid-text__content h2 {
+    font-size: 20px;
+  }
+  .eh__wid-text__content p {
+    font-size: 17px;
+    line-height: 22px;
+  }
+  .eh__wid-text__bar {
+    height: 150%;
+  }
+  .eh__wid-btn {
+    margin: 3rem 0 3rem 0;
+  }
+  .eh__wid-text__content button {
+    width: 8rem;
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .eh__wid-text,
+  .eh__wid-image {
+    width: 17rem;
+    height: 17rem;
+  }
+  .eh__wid-image {
+    margin-top: 23rem;
+  }
+  .eh__wid-text__content h1 {
+    font-size: 30px;
+  }
+  .eh__wid-text__content h2 {
+    font-size: 19px;
+  }
+  .eh__wid-text__content p {
+    font-size: 16px;
+  }
+  .eh__wid-text__bar {
+    height: 195%;
+  }
+  .eh__wid-text__content button {
+    width: 8rem;
+    font-size: 16px;
+  }
+}

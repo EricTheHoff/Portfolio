@@ -4,12 +4,15 @@ import homeImage from '../../assets/homeImage.svg'
 import './home.css'
 
 const Home = () => {
+
+  // Dynamically sets .eh__home height based on the whole viewport height minus the navbar's height.
   const setMinHeight = () => {
     const navbarHeight = document.getElementById('navbar').offsetHeight
     const homePage = document.querySelector('.eh__home')
     homePage.style.minHeight = `calc(100vh - ${navbarHeight}px)`
   }
 
+  // Height is set on initial render, and removes any event listeners for resizing to prevent memory leaks.
   useEffect(() => {
     setMinHeight()
 
@@ -20,6 +23,7 @@ const Home = () => {
     )
   }, [])
 
+  // Adds an event listener for resizing on initial render.
   useEffect(() => {
     window.addEventListener('resize', setMinHeight)
 
@@ -45,10 +49,10 @@ const Home = () => {
               any questions or proposals!
           </p>
           <h2>{`<Front End Design/>`}<br/>
-              {`<Full Stack Web Applications/>`}
+              {`<Server-Side Development/>`}
           </h2>
           <h3>Creating projects from start to finish<br/>
-              with clean and efficient design.
+              with clean and efficient code.
           </h3>
         </div>
       </div>

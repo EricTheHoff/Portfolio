@@ -7,13 +7,13 @@ const App = () => {
   return (
     <div className='App'>
           <Navbar/>
+          
           <Home/>
-
           {/* <Header/> */}
-          {/* <WID/>
-          <Contact/>
+          <WID/>
+          {/* <Contact/> */}
 
-          <Footer/> */}
+          {/* <Footer/> */}
     </div>
   )
 }
