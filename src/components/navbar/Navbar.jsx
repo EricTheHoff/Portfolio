@@ -38,8 +38,11 @@ const Navbar = () => {
           {toggleMenu && (
             <div className='eh__navbar-menu_container scale-up-center'>
               <div className='eh__navbar-menu_container-links'>
-                <Menu/>
-                <p><a href='#more'>More</a></p>
+                {/* Automatically Hide Menu on Navlink Selection */}
+                <p><a href='#home' onClick={() => setToggleMenu(false)}>Home</a></p>
+                <p><a href='#wid' onClick={() => setToggleMenu(false)}>What I Do</a></p>
+                <p><a href='#contact' onClick={() => setToggleMenu(false)}>Contact Me</a></p>
+                <p><a href='#more' onClick={() => setToggleMenu(false)}>More</a></p>
               </div>
             </div>
           )}

@@ -37,15 +37,15 @@ const Home = () => {
         <div className='eh__home-text__bar'></div>
         <div className='eh__home-text__content'>
           <h1>Welcome</h1>
-          <p>Howdy! My name is Eric Hoffman, and I'm a full-stack web developer based in Utah Valley.
-              I have a passion for creating and working on interesting, innovative projects. To me, web
+          <p>Howdy! My name is Eric Hoffman, and I'm a full-stack web developer based in Utah Valley
+              with a particular passion for front-end design and creating a smooth user experience! To me, web
               development offers a fantastic balance of technical problem-solving and creativity. When I'm not wondering why
               a div isn't aligning how I want, I like to spend my time reading, watching shows with
               my fiancée, and getting tossed off cliffs in Baldurs Gate III. Feel free to reach out with
               any questions or proposals!
           </p>
-          <h2>Front End Design<br/>
-              Full Stack Web Applications
+          <h2>{`<Front End Design/>`}<br/>
+              {`<Full Stack Web Applications/>`}
           </h2>
           <h3>Creating projects from start to finish<br/>
               with clean and efficient design.

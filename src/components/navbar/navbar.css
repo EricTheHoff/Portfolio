@@ -23,14 +23,20 @@
   margin-right: auto;
   padding: 1rem;
   transition: all .3s ease-in-out;
-  cursor: pointer;
 }
 
-.eh__navbar-links_logo:hover {
-  scale: 1.05;
-  border-image: var(--gradient-bar-reversed);
-  border-image-slice: 1;
+@media (hover: hover) and (pointer: fine) {
+  .eh__navbar-links_logo:hover {
+    scale: 1.05;
+    border-image: var(--gradient-bar-reversed);
+    border-image-slice: 1;
+  }
+  .eh__navbar-links_container p:hover,
+  .eh__navbar-menu_container p:hover {
+    scale: 1.2;
+  }
 }
+
 
 .eh__navbar-links_logo p {
   display: table-cell;
@@ -60,10 +66,6 @@
   transition: all .3s ease
 }
 
-.eh__navbar-links_container p:hover,
-.eh__navbar-menu_container p:hover {
-  scale: 1.2;
-}
 
 #final-link {
   margin: 0 0 0 4rem;
