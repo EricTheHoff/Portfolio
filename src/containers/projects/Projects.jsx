@@ -4,7 +4,7 @@ import './projects.css'
 const Projects = () => {
   return (
     <div className='eh__projects section__padding'>
-      Projects
+      This should smoothly transition in.
     </div>
   )
 }

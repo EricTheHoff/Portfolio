@@ -1,16 +1,70 @@
 /* Container for What I Do */
 .eh__wid {
+  margin-bottom: 3rem;
+}
+
+/* Container for default page. */
+.eh__wid-before {
   display: flex;
   justify-content: space-between;
+  transition: all 1s ease-in-out;
+}
 
-  margin-bottom: 3rem;
+/* Container for Projects page. */
+.eh__wid-after {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+/* Animation for sliding Projects page in. */
+.transition-in {
+  animation: slide-in 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    width: 100%;
+    height: 40rem;
+    opacity: 1;
+  }
+}
+
+/* Animation for sliding default page out. */
+.transition-out {
+	animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Sets the sizes of the flex items in the default page to 0 so they don't take up space. */
+.transition-out .eh__wid-image,
+.transition-out .eh__wid-text {
+  max-width: 0;
+  max-height: 0;
 }
 
 /* Sizing for text and image containers. */
 .eh__wid-image,
 .eh__wid-text {
-  width: 40rem;
-  height: 40rem;
+  max-width: 40rem;
+  max-height: 40rem;
   transition: all .5s ease-in-out;
 }
 
@@ -146,6 +200,10 @@
   margin-top: -5.5rem;
 }
 
+.text-resize {
+  font-size: 0;
+}
+
 @media screen and (max-width: 1367px) {
   /* Adjusting bar height to account for margin adjustments. */
   .eh__wid-text__bar {
@@ -162,7 +220,7 @@
 
 @media screen and (max-width: 1280px) {
   /* Altering flex direction to stack elements in columns. */
-  .eh__wid {
+  .eh__wid-before {
     flex-direction: column-reverse;
   }
   .eh__wid-image {
@@ -199,8 +257,8 @@
 @media screen and (max-width: 700px) {
   .eh__wid-text,
   .eh__wid-image {
-    width: 25rem;
-    height: 25rem;
+    max-width: 25rem;
+    max-height: 25rem;
   }
   .eh__wid-image {
     margin-top: 9rem;
@@ -236,8 +294,8 @@
 @media screen and (max-width: 470px) {
   .eh__wid-text,
   .eh__wid-image {
-    width: 20rem;
-    height: 20rem;
+    max-width: 20rem;
+    max-height: 20rem;
   }
   .eh__wid-image {
     margin-top: 17rem;
@@ -267,8 +325,8 @@
 @media screen and (max-width: 360px) {
   .eh__wid-text,
   .eh__wid-image {
-    width: 17rem;
-    height: 17rem;
+    max-width: 17rem;
+    max-height: 17rem;
   }
   .eh__wid-image {
     margin-top: 23rem;
