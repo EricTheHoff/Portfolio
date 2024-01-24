@@ -9,8 +9,8 @@ const App = () => {
           <Navbar/>
           {/* <Header/> */}
           
-          <Home/>
-          <WID/>
+          {/* <Home/>
+          <WID/> */}
           {/* <Contact/> */}
 
           {/* <Footer/> */}
