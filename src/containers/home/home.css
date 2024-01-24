@@ -1,0 +1,263 @@
+/* Container for Home */
+.eh__home {
+  display: flex;
+  justify-content: space-between;
+  transition: all .5s ease-in-out;
+
+  margin-bottom: 3rem;
+}
+
+/* Sizing for text and image containers. */
+.eh__home-text,
+.eh__home-image {
+  width: 40rem;
+  height: 40rem;
+  transition: all .5s ease-in-out;
+}
+
+/* Using flex to organize the bar and text content. */
+.eh__home-text {
+  display: flex;
+
+  margin-right: 3rem;
+}
+
+/* Hover effects for devices that can hover with a mouse/stylus. */
+@media (hover: hover) and (pointer: fine) {
+  .eh__home:hover {
+    .eh__home-text {
+      transform: scale(1.05);
+    }
+    .eh__home-text__bar {
+      height: 105%;
+    }
+    .eh__home-text__content h1, h2, h3, p {
+      margin-left: 2rem;
+    }
+    .eh__home-text__content h1 {
+      transform: scale(1.05);
+    };
+    .eh__home-text__content h2 {
+      margin-top: 2rem;
+    }
+    .eh__home-text__content p {
+      opacity: 1;
+    }
+    .eh__home-image {
+      opacity: 1;
+    }
+  }
+}
+
+/* Colored bar. */
+.eh__home-text__bar {
+  background: var(--gradient-bar);
+  min-width: 1.875rem;
+  height: 45%;
+  transition: all .5s ease-in-out;
+}
+
+/* Small margin so text content doesn't overlap image on smaller resolution monitors. */
+.eh__home-text__content {
+  margin-left: 2rem;
+}
+
+.eh__home-text__content h1, h2, h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all .5s ease-in-out;
+}
+
+.eh__home-text__content h1 {
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: 8px;
+}
+
+.eh__home-text__content h2 {
+  color: var(--color-subtitle);
+  font-size: 28px;
+  text-align: left;
+
+  margin: -20rem 0 1rem 0;
+}
+
+.eh__home-text__content h3 {
+  color: var(--color-subtitle);
+  font-size: 22px;
+}
+
+.eh__home-text__content p {
+  opacity: 0;
+  font-size: 25px;
+  line-height: 33px;
+  text-align: left;
+  transition: all .5s ease-in-out;
+
+  margin-top: 1rem;
+}
+
+.eh__home-image {
+  opacity: 0;
+  position: relative;
+}
+
+.eh__home-image img {
+  position: absolute;
+}
+
+
+.eh__home-image img:nth-child(1) {
+  z-index: 2;
+  width: 80%;
+  clip-path: circle(40%);
+  transition: all 1.2s ease-in-out;
+
+  top: -52px;
+}
+
+.eh__home-image img:nth-child(2) {
+  z-index: 1;
+  width: 100%;
+
+  margin-top: 5.2rem;
+}
+
+@media screen and (max-width: 1480px) {
+  /* Adjusting bar height to account for margin adjustments. */
+  .eh__home-text__bar {
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 1367px) {
+  /* Adjusting bar height to account for margin adjustments. */
+  .eh__home-text__bar {
+    height: 55%;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .eh__home:hover {
+      .eh__home-text__bar {
+        height: 120%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  /* Altering flex direction to stack elements in columns. */
+  .eh__home {
+    flex-direction: column;
+  }
+  .eh__home-text__bar {
+    height: 105%;
+  }
+  .eh__home-image {
+    opacity: 1;
+    align-self: flex-end;
+
+    margin-top: 6rem;
+  }
+  .eh__home-text__content h2 {
+    margin: 4.5rem 0 1rem 0;
+  }
+  .eh__home-text__content p {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  /* Centering the image container on the flex cross axis. */
+  .eh__home-image {
+    align-self: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .eh__home-text,
+  .eh__home-image {
+    width: 25rem;
+    height: 25rem;
+  }
+  .eh__home-image {
+    margin-top: 12rem;
+  }
+  .eh__home-text__content h1 {
+    font-size: 50px;
+  }
+  .eh__home-text__content h2 {
+    font-size: 22px;
+
+    margin: 1rem 0 1rem 0;
+  }
+  .eh__home-text__content h3 {
+    font-size: 20px;
+  }
+  .eh__home-text__content p {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  .eh__home-text__bar {
+    min-width: 1.45rem;
+    height: 140%;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .eh__home-text,
+  .eh__home-image {
+    width: 20rem;
+    height: 20rem;
+  }
+  .eh__home-image {
+    margin-top: 19rem;
+  }
+  .eh__home-text__content h1 {
+    font-size: 40px;
+  }
+  .eh__home-text__content h2 {
+    font-size: 20px;
+  }
+  .eh__home-text__content h3 {
+    font-size: 19px;
+  }
+  .eh__home-text__content p {
+    font-size: 17px;
+    line-height: 22px;
+  }
+  .eh__home-text__bar {
+    height: 190%;
+  }
+  .eh__home-image img:nth-child(1) {
+    top: -12px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .eh__home-text,
+  .eh__home-image {
+    width: 17rem;
+    height: 17rem;
+  }
+  .eh__home-image {
+    margin-top: 23rem;
+  }
+  .eh__home-text__content h1 {
+    font-size: 30px;
+  }
+  .eh__home-text__content h2 {
+    font-size: 19px;
+  }
+  .eh__home-text__content h3 {
+    font-size: 17px;
+  }
+  .eh__home-text__content p {
+    font-size: 16px;
+  }
+  .eh__home-text__bar {
+    height: 238%;
+  }
+  .eh__home-image img:nth-child(1) {
+    top: 0;
+  }
+}
