@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header, Home, WID, Contact, Footer, Projects } from './containers';
-import { Navbar, Message } from './components';
+import { Header, Home, WID, Contact, Footer } from './containers/index.js';
+import { Navbar } from './components/index.js';
 import './app.css'
 
 const App = () => {
