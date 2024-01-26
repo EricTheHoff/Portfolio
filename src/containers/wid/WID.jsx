@@ -36,7 +36,7 @@ const WID = () => {
 
       <div className={`eh__wid-after ${showProjects ? 'transition-in' : ''}`}>
         <Projects
-          hideProjects={setShowProjects}
+          setShowProjects={setShowProjects}
         />
       </div>
       

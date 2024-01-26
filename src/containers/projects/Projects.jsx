@@ -1,10 +1,13 @@
 import React from 'react'
 import './projects.css'
 
-const Projects = () => {
+const Projects = ({ setShowProjects }) => {
   return (
     <div className='eh__projects section__padding'>
-      This should smoothly transition in.
+      <div className='eh__projects-content'>
+        This should smoothly transition in.
+        <button type='button' onClick={() => setShowProjects(false)}>Back</button>
+      </div>
     </div>
   )
 }

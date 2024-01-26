@@ -1,5 +1,11 @@
 /* Container for What I Do */
 .eh__wid {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  /* Setting min-height so absolutely-positioned items don't overlap other components' content. */
+  min-height: 50rem;
+
   margin-bottom: 3rem;
 }
 
@@ -7,57 +13,37 @@
 .eh__wid-before {
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  /* Using 4 and 6rem to match right padding for page content. */
+  top: 4rem;
+  right: 6rem;
+  /* Sets space between image and text. */
+  width: 93%;
+  z-index: 1;
   transition: all 1s ease-in-out;
+}
+
+/* Class for fading default page out. Swapping indices so users can interact with Projects page. */
+.eh__wid-before.transition-out {
+  opacity: 0;
+  z-index: 0;
 }
 
 /* Container for Projects page. */
 .eh__wid-after {
-  width: 0;
-  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   opacity: 0;
+  z-index: 0;
   transition: all 1s ease-in-out;
 }
 
-/* Animation for sliding Projects page in. */
-.transition-in {
-  animation: slide-in 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@keyframes slide-in {
-  0% {
-    transform: translateX(100%);
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    width: 100%;
-    height: 40rem;
-    opacity: 1;
-  }
-}
-
-/* Animation for sliding default page out. */
-.transition-out {
-	animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@keyframes slide-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-/* Sets the sizes of the flex items in the default page to 0 so they don't take up space. */
-.transition-out .eh__wid-image,
-.transition-out .eh__wid-text {
-  max-width: 0;
-  max-height: 0;
+/* Class for fading Projects page in. Swapping indices so users can interact with Projects page. */
+.eh__wid-after.transition-in {
+  opacity: 1;
+  z-index: 1;
 }
 
 /* Sizing for text and image containers. */
@@ -84,7 +70,7 @@
     .eh__wid-text__bar {
       height: 100%;
     }
-    .eh__wid-text__content h1, h2, p, button {
+    .eh__wid-text__content h1, h2, p {
       margin-right: 2rem;
     }
     .eh__wid-text__content h1 {
@@ -109,6 +95,7 @@
   .eh__wid-text__content button:hover {
     --color-1: #9191E9;
     --color-2: #2D898B;
+    transform: scale(1.05);
   }
 }
 
@@ -176,6 +163,7 @@
   inherits: false;
 }
 
+/* Styling for button. */
 .eh__wid-text__content button {
   width: 10.5rem;
   height: 3.5rem;
@@ -187,7 +175,10 @@
   font-size: 25px;
   font-weight: 500;
   text-transform: uppercase;
-  transition: --color-1 .5s, --color-2 .5s ease-in-out;
+  transition:
+    --color-1 .5s ease-in-out,
+    --color-2 .5s ease-in-out,
+    transform .5s ease-in-out;
 }
 
 .eh__wid-image {
@@ -198,10 +189,6 @@
   width: 130%;
 
   margin-top: -5.5rem;
-}
-
-.text-resize {
-  font-size: 0;
 }
 
 @media screen and (max-width: 1367px) {
@@ -219,25 +206,30 @@
 }
 
 @media screen and (max-width: 1280px) {
+  /* Adjusting height of parent container to prevent overlapping of other components. */
+  .eh__wid {
+    min-height: 95rem;
+  }
   /* Altering flex direction to stack elements in columns. */
   .eh__wid-before {
     flex-direction: column-reverse;
+    width: 83%;
   }
   .eh__wid-image {
     opacity: 1;
 
-    margin-top: 6rem;
+    margin-top: 8rem;
   }
   .eh__wid-text {
     align-self: flex-end;
 
-    margin-left: 0;
+    margin-left: 4rem;
   }
   .eh__wid-text__bar {
-    height: 100%;
+    height: 40rem;
   }
   .eh__wid-text__content h2 {
-    margin-top: 8.5rem;
+    margin-top: 6rem;
   }
   .eh__wid-text__content p {
     opacity: 1;
@@ -248,13 +240,15 @@
 }
 
 @media screen and (max-width: 850px) {
-  /* Centering the text container on the flex cross axis. */
-  .eh__wid-text {
-    align-self: auto;
+  .eh__wid-before {
+    width: 75%;
   }
 }
 
 @media screen and (max-width: 700px) {
+  .eh__wid {
+    min-height: 67rem;
+  }
   .eh__wid-text,
   .eh__wid-image {
     max-width: 25rem;
@@ -262,6 +256,12 @@
   }
   .eh__wid-image {
     margin-top: 9rem;
+  }
+  .eh__wid-image img {
+    margin-right: 6rem;
+  }
+  .eh__wid-text {
+    margin-left: 1rem;
   }
   .eh__wid-text__content h1 {
     font-size: 50px;
@@ -277,7 +277,7 @@
   }
   .eh__wid-text__bar {
     min-width: 1.45rem;
-    height: 115%;
+    height: 29rem;
   }
   .eh__wid-btn {
     text-align: right;
@@ -291,14 +291,30 @@
   }
 }
 
+/* Slight overlapping occurs between 470 - 480px, using this query to resolve that. */
+@media screen and (max-width: 480px) {
+  .eh__wid-image {
+    margin-top: 11rem;
+  }
+  .eh__wid-text__bar {
+    height: 33rem;
+  }
+}
+
 @media screen and (max-width: 470px) {
+  .eh__wid-before {
+    right: 2rem;
+  }
   .eh__wid-text,
   .eh__wid-image {
     max-width: 20rem;
     max-height: 20rem;
   }
   .eh__wid-image {
-    margin-top: 17rem;
+    margin-top: 25rem;
+  }
+  .eh__wid-text {
+    margin-left: auto;
   }
   .eh__wid-text__content h1 {
     font-size: 40px;
@@ -311,7 +327,7 @@
     line-height: 22px;
   }
   .eh__wid-text__bar {
-    height: 150%;
+    height: 33rem;
   }
   .eh__wid-btn {
     margin: 3rem 0 3rem 0;
@@ -323,13 +339,16 @@
 }
 
 @media screen and (max-width: 360px) {
+  .eh__wid {
+    min-height: 60rem;
+  }
   .eh__wid-text,
   .eh__wid-image {
     max-width: 17rem;
     max-height: 17rem;
   }
   .eh__wid-image {
-    margin-top: 23rem;
+    margin-top: 24rem;
   }
   .eh__wid-text__content h1 {
     font-size: 30px;
@@ -341,7 +360,7 @@
     font-size: 16px;
   }
   .eh__wid-text__bar {
-    height: 195%;
+    height: 35rem;
   }
   .eh__wid-text__content button {
     width: 8rem;
