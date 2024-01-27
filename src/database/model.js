@@ -17,16 +17,16 @@ Project.init (
       autoIncrement: true,
       primaryKey: true,
     },
-    image: {
-      type: DataTypes.STRING,
-    },
     title: {
       type: DataTypes.STRING,
     },
     description: {
+      type: DataTypes.TEXT,
+    },
+    githubLink: {
       type: DataTypes.STRING,
     },
-    link: {
+    demoLink: {
       type: DataTypes.STRING,
     }
   },

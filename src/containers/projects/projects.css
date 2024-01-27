@@ -1,16 +1,89 @@
+/* Styling for Projects container. */
 .eh__projects {
-  border: 3px solid lightgreen;
+  display: flex;
+  flex-direction: column;
 }
 
-/* .eh__projects-content {
-  border: 3px solid gold;
-  width: 80rem;
-  height: 40rem;
-} */
+/* Container for cards and prev/next buttons. */
+.eh__projects-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.slide-in
- {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+.eh__projects-cards img {
+  cursor: pointer;
+
+  transition: transform .5s ease-in-out;
+}
+
+/* Prev button. */
+.eh__projects-cards-prev {
+  margin-right: 2rem;
+}
+
+/* Next button. */
+.eh__projects-cards-next {
+  margin-left: 2rem;
+}
+
+/* Container for cards-only. */
+.eh__projects-cards-display {
+  display: flex;
+  gap: 2rem;
+}
+
+.eh__projects-cards_card {
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+.eh__projects-btn {
+  text-align: center;
+
+  margin-top: 3rem;
+}
+
+/* Styling for page button. */
+.eh__projects-btn button {
+  width: 10.5rem;
+  height: 3.5rem;
+  border: none;
+  border-radius: 50px;
+  color: #FFF;
+  background: linear-gradient(var(--color-1), var(--color-2));
+  font-family: var(--font-family);
+  font-size: 25px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    --color-1 .5s ease-in-out,
+    --color-2 .5s ease-in-out,
+    transform .5s ease-in-out;
+}
+
+/* Color props defined to help smoothly transition gradient colors. */
+@property --color-1 {
+  syntax: '<color>';
+  initial-value: #2D898B;
+  inherits: false;
+}
+
+@property --color-2 {
+  syntax: '<color>';
+  initial-value: #9191E9;
+  inherits: false;
+}
+
+/* Hover effects for devices that can hover with a mouse/stylus. */
+@media (hover: hover) and (pointer: fine) {
+  .eh__projects-cards img:hover {
+    transform: scale(1.4);
+  }
+  .eh__projects-btn button:hover {
+    --color-1: #9191E9;
+    --color-2: #2D898B;
+    transform: scale(1.1);
+  }
 }

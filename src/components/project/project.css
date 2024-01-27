@@ -1,0 +1,54 @@
+/* Project card contianer. */
+.eh__project {
+  position: relative;
+  background: var(--gradient-bar);
+  border-radius: 10px;
+  max-width: 40rem;
+  height: 30rem;
+  transition: transform .5s ease-in-out;
+
+  padding: 1rem;
+}
+
+.eh__project-title,
+.eh__project-links {
+  text-align: center;
+}
+
+.eh__project-title {
+  font-size: 40px;
+  font-weight: 700;
+
+  margin: 1rem 0;
+}
+
+.eh__project-description {
+  text-align: justify;
+  font-size: 18px;
+  line-height: 24px;
+
+  margin: 0 2rem;
+}
+
+.eh__project-links {
+  position: absolute;
+  inset: auto 0 0 0;
+  font-size: 24px;
+
+  margin: 2rem 0;
+}
+
+.eh__project-links a {
+  transition: color .5s ease-in-out;
+}
+
+/* Hover effects for devices that can hover with a mouse/stylus. */
+@media (hover: hover) and (pointer: fine) {
+  .eh__project:hover {
+    transform: scale(1.05);
+  }
+  .eh__project-links a:hover {
+    color: var(--color-bg);
+    cursor: pointer;
+  }
+}

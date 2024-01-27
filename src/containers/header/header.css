@@ -1,62 +1,83 @@
 .container {
-  border: 3px solid white;
-  position: relative;
-  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.before {
-  border: 3px solid gold;
+.card-container {
+  /* border: 3px solid lightblue; */
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  transition:
-    opacity 1s ease-in-out;
-}
-.before.fade-out {
-  opacity: 0;
-  z-index: 0;
+  align-items: center;
 }
 
-.after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 0;
-  transition:
-    opacity 1s ease-in-out;
-}
-.after.fade-in {
-  opacity: 1;
-  z-index: 1;
+.card-container img {
+  /* border: 3px solid lightgreen; */
+  cursor: pointer;
+  transition: transform .5s ease-in-out;
 }
 
-.before-bar {
-  background: var(--gradient-bar);
-  width: 1.875rem;
-  height: 35%;
+.prev {
+  margin-right: 2rem;
 }
 
-.before-image,
-.before-text {
-  width: 40rem;
-  height: 40rem;
+.next {
+  margin-left: 2rem;
 }
 
-.before-text {
+.card-grid {
+  /* border: 3px dashed gold; */
   display: flex;
-
-  margin-left: 3rem;
+  gap: 2rem;
 }
 
-.before-image img {
-  width: 130%;
+.card {
+  flex-basis: 50%;
+  flex-grow: 1;
+}
 
-  margin-top: -5.5rem;
+.page-button {
+  text-align: center;
+
+  margin-top: 3rem;
+}
+
+.page-button button {
+  width: 170px;
+  height: 55px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(var(--color-1), var(--color-2));
+  font-size: 25px;
+  font-weight: 500;
+  color: #FFF;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    --color-1 .5s ease-in-out,
+    --color-2 .5s ease-in-out,
+    transform .5s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-container img:hover {
+    transform: scale(1.4);
+  }
+  .page-button button:hover {
+    --color-1: #9191E9;
+    --color-2: #2D898B;
+    transform: scale(1.1);
+  }
+}
+
+/* Color props defined to help smoothly transition gradient colors. */
+@property --color-1 {
+  syntax: '<color>';
+  initial-value: #2D898B;
+  inherits: false;
+}
+
+@property --color-2 {
+  syntax: '<color>';
+  initial-value: #9191E9;
+  inherits: false;
 }

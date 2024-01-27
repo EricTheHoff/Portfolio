@@ -1,45 +1,69 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios';
 import './header.css'
-import widImage from '../../assets/widImage.svg'
-import Projects from '../projects/Projects.jsx'
+import Project from '../../components/project/Project.jsx';
+import previous from '../../assets/previous.svg'
+import next from '../../assets/next.svg'
 
 const Header = () => {
-  const [fade, setFade] = useState(false)
+  const [currentCard, setCurrentCard] = useState(0)
+  const [cardArray, setCardArray] = useState([0, 1, 2])
+  // console.log(currentCard)
+
+  const prevClicked = () => {
+    setCurrentCard((prevCard) => (prevCard === 0 ? 2 : prevCard - 1))
+  }
+
+  const nextClicked = () => {
+    setCurrentCard((prevCard) => (prevCard === 2 ? 0 : prevCard + 1))
+  }
+
+  // useEffect(() => {
+  //   console.log(currentCard)
+  // },[currentCard])
+
+  const getCardOrder = (idx) => {
+    // [0, 1, 2] => order 1, [1, 2, 0] => order 2, 
+    const cardOrder = [currentCard, (currentCard + 1) % 3, (currentCard + 2) % 3]
+    return cardOrder.indexOf(idx) + 1
+  }
+
+  const getVisibleIndices = () => {
+    return [currentCard, (currentCard + 1) % 3]
+  }
 
   return (
     <div className='container section__padding'>
 
-      <div className={`before ${fade ? 'fade-out' : ''}`}>
-        <div className='before-image'>
-          <img src={widImage} alt='placeholder'/>
+      <div className='card-container'>
+        <div className='prev' onClick={prevClicked}>
+          <img src={previous} alt='previous'/>
         </div>
 
-        <div className='before-text'>
-
-          <div className='before-text-content'>
-            <h1>Testing Animations</h1>
-            <p>I create full-stack web applications and sites with JavaScript, HTML, and CSS,
-              and I have experience in multiple frameworks, including React and Express. I've also
-              utilized PostgreSQL for database management on previous projects.
-              Interested in seeing some of my work? Click the button to see more!
-            </p>
-            <div className='before-button'>
-              <button onClick={() => setFade(true)}>Slide</button>
+        <div className='card-grid'>
+          {cardArray.map((idx) => (
+            <div
+              key={idx}
+              className='card'
+              style={{
+                order: getCardOrder(idx),
+                display: getVisibleIndices().includes(idx) ? 'flex' : 'none',
+              }}
+            >
+              <Project
+                index={idx}
+              />
             </div>
-            <h2>{`<Custom Front End Solutions/>`}<br/>
-                {`<Full Stack Projects/>`}
-            </h2>
-          </div>
+          ))}
+        </div>
 
-          <div className='before-bar'></div>
-
+        <div className='next' onClick={nextClicked}>
+          <img src={next} alt='next'/>
         </div>
       </div>
 
-      <div className={`after ${fade ? 'fade-in' : ''}`}>
-        <Projects
-          setFade={setFade}
-        />
+      <div className='page-button'>
+        <button type='button'>Back</button>
       </div>
 
     </div>

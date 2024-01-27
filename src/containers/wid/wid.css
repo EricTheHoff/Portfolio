@@ -95,7 +95,7 @@
   .eh__wid-text__content button:hover {
     --color-1: #9191E9;
     --color-2: #2D898B;
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header, Home, WID, Contact, Footer } from './containers/index.js';
-import { Navbar } from './components/index.js';
+import { Header, Home, WID, Contact, Footer, Projects } from './containers/index.js';
+import { Navbar, Project } from './components/index.js';
 import './app.css'
 
 const App = () => {
@@ -8,6 +8,7 @@ const App = () => {
     <div className='App'>
           <Navbar/>
           {/* <Header/> */}
+          {/* <Projects/> */}
           
           <Home/>
           <WID/>
