@@ -31,9 +31,6 @@
     .eh__home-text__bar {
       height: 105%;
     }
-    .eh__home-text__content h1, h2, h3, p {
-      margin-left: 2rem;
-    }
     .eh__home-text__content h1 {
       transform: scale(1.05);
     };
@@ -53,7 +50,7 @@
 .eh__home-text__bar {
   background: var(--gradient-bar);
   min-width: 1.875rem;
-  height: 45%;
+  height: 42%;
   transition: all .5s ease-in-out;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import './project.css'
 
-const Project = ({ index, title, description, demoLink, githubLink }) => {
+const Project = ({ title, description, demoLink, githubLink }) => {
   return (
     <div className='eh__project'>
 

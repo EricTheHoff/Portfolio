@@ -4,7 +4,7 @@
   background: var(--gradient-bar);
   border-radius: 10px;
   max-width: 40rem;
-  height: 30rem;
+  height: 45rem;
   transition: transform .5s ease-in-out;
 
   padding: 1rem;
@@ -24,10 +24,12 @@
 
 .eh__project-description {
   text-align: justify;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 22px;
+  line-height: 30px;
 
   margin: 0 2rem;
+
+
 }
 
 .eh__project-links {
@@ -39,6 +41,7 @@
 }
 
 .eh__project-links a {
+  font-weight: 500;
   transition: color .5s ease-in-out;
 }
 
@@ -50,5 +53,51 @@
   .eh__project-links a:hover {
     color: var(--color-bg);
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .eh__project {
+    max-width: 35rem;
+    height: 30rem;
+  }
+  .eh__project-description {
+    font-size: 19.5px;
+    line-height: 26px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .eh__project-description {
+    font-size: 18.5px;
+    line-height: 26px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .eh__project {
+    height: 35rem;
+  }
+  .eh__project-description {
+    font-size: 17px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .eh__project-title {
+    font-size: 30px;
+  }
+  /* Once screen size is < 450, project description will become a scrollable field. */
+  .eh__project-description {
+    text-align: center;
+    border-radius: 10px;
+    max-height: 75%;
+    overflow-y: scroll;
+
+    margin: auto;
+  }
+  .eh__project-links {
+    font-size: 19px;
   }
 }

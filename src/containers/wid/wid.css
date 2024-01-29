@@ -70,9 +70,6 @@
     .eh__wid-text__bar {
       height: 100%;
     }
-    .eh__wid-text__content h1, h2, p {
-      margin-right: 2rem;
-    }
     .eh__wid-text__content h1 {
       transform: scale(1.05);
     }
@@ -248,6 +245,9 @@
 @media screen and (max-width: 700px) {
   .eh__wid {
     min-height: 67rem;
+  }
+  .eh__wid.mobile {
+    min-height: 92rem;
   }
   .eh__wid-text,
   .eh__wid-image {

@@ -87,3 +87,36 @@
     transform: scale(1.1);
   }
 }
+
+/* Most of the media queries for screen-size will be handled by the WID and individual Project components. */
+@media screen and (max-width: 1280px) {
+  .eh__projects-cards {
+    flex-direction: column;
+  }
+  .eh__projects-cards-display {
+    flex-direction: column;
+  }
+  .eh__projects-cards-prev,
+  .eh__projects-cards-next {
+    transform: rotate(90deg);
+  }
+  .eh__projects-cards-prev img {
+    margin-bottom: 1rem;
+  }
+  .eh__projects-cards-next img {
+    margin-top: 1rem;
+  }
+  .eh__projects-cards-nav-btn {
+    display: flex;
+    
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .eh__projects-btn button {
+    width: 8.5rem;
+    height: 2.5rem;
+    font-size: 18px;
+  }
+}
