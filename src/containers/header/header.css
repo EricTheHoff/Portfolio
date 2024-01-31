@@ -1,72 +1,147 @@
 .container {
+  /* border: 3px solid white; */
+  position: relative;
+  transition: all .5s ease-in-out;
+}
+
+.border-tl,
+.border-br {
+  width: 12rem;
+  height: 12rem;
+  position: absolute;
+  border-image-slice: 1;
+  border-image-source: var(--gradient-bar);
+  transition: all .5s ease-in-out;
+}
+
+.border-tl {
+  border-top: 8px solid;
+  border-left: 8px solid;
+  inset: 2.5rem auto auto 6rem;
+}
+
+.border-br {
+  border-bottom: 8px solid;
+  border-right: 8px solid;
+  inset: auto 6rem 2.5rem auto;
+}
+
+.content {
   display: flex;
   flex-direction: column;
 }
 
-.card-container {
-  /* border: 3px solid lightblue; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  transition: all .5s ease-in-out;
 }
 
-.card-container img {
-  /* border: 3px solid lightgreen; */
-  cursor: pointer;
+.title h1 {
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: 8px;
+
+  margin-bottom: 1rem;
+}
+
+.title h3 {
+  color: var(--color-subtitle);
+  font-size: 28px;
+  font-weight: 700;
+  
+  margin-bottom: 3rem;
+}
+
+.name,
+.email {
+  width: 40%;
+  height: 3rem;
+  background: #79D1D3;
+  border: 5px solid #2D898B;
+  border-radius: 10px;
+
+  color: #1B1B1B;
+  font-size: 18px;
+  font-style: italic;
+  outline: none;
   transition: transform .5s ease-in-out;
+
+  padding: 1.5rem 1rem;
+  margin-bottom: 2rem;
 }
 
-.prev {
+.name:focus,
+.email:focus,
+.message:focus {
+  transform: scale(1.05);
+}
+
+.name {
   margin-right: 2rem;
 }
 
-.next {
-  margin-left: 2rem;
-}
-
-.card-grid {
-  /* border: 3px dashed gold; */
+.top {
   display: flex;
-  gap: 2rem;
+  justify-content: center;
 }
 
-.card {
-  flex-basis: 50%;
-  flex-grow: 1;
+.bottom {
+  display: flex;
+  justify-content: center;
 }
 
-.page-button {
+.message {
+  width: 82%;
+  height: 20rem;
+  background: #C3C3E8;
+  border: 5px solid #9191E9;
+  border-radius: 10px;
+  position: relative;
+  
+  color: #1B1B1B;
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-style: italic;
+  resize: none;
+  outline: none;
+  transition: transform .5s ease-in-out;
+
+  padding: 1.5rem 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ::placeholder {
+  color: #1B1B1B;
+  font-size: 18px;
+  font-style: italic;
+  opacity: .85;
+} */
+
+/* .message::placeholder {
+  font-size: 20px;
+} */
+
+.contact-btn {
   text-align: center;
-
-  margin-top: 3rem;
 }
 
-.page-button button {
-  width: 170px;
-  height: 55px;
-  border-radius: 50px;
+.contact-btn button {
+  width: 10.5rem;
+  height: 3.5rem;
   border: none;
+  border-radius: 50px;
+  color: #FFF;
   background: linear-gradient(var(--color-1), var(--color-2));
+  font-family: var(--font-family);
   font-size: 25px;
   font-weight: 500;
-  color: #FFF;
   text-transform: uppercase;
   cursor: pointer;
   transition:
-    --color-1 .5s ease-in-out,
-    --color-2 .5s ease-in-out,
-    transform .5s ease-in-out;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .card-container img:hover {
-    transform: scale(1.4);
-  }
-  .page-button button:hover {
-    --color-1: #9191E9;
-    --color-2: #2D898B;
-    transform: scale(1.1);
-  }
+  --color-1 .5s ease-in-out,
+  --color-2 .5s ease-in-out,
+  transform .5s ease-in-out;
 }
 
 /* Color props defined to help smoothly transition gradient colors. */
@@ -80,4 +155,135 @@
   syntax: '<color>';
   initial-value: #9191E9;
   inherits: false;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .container:hover {
+    .title,
+    .border-tl,
+    .border-br {
+      transform: scale(1.05);
+    }
+  }
+  .contact-btn button:hover {
+    --color-1: #9191E9;
+    --color-2: #2D898B;
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .border-tl,
+  .border-br {
+    width: 10rem;
+    height: 10rem;
+  }
+  .title h1 {
+    font-size: 60px;
+  }
+  .title h3 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .border-tl,
+  .border-br {
+    width: 6rem;
+    height: 6rem;
+  }
+  .border-tl {
+    inset: 2.5rem auto auto 4rem; 
+  }
+  .border-br {
+    inset: auto 4rem 2.5rem auto;
+  }
+  .title h1 {
+    font-size: 50px;
+    letter-spacing: 6px;
+  }
+  .title h3 {
+    font-size: 22px;
+
+    margin-bottom: 2rem;
+  }
+  .name,
+  .email {
+    margin-bottom: 1rem;
+  }
+  .name {
+    margin-right: 1rem;
+  }
+  .message,
+  .message::placeholder {
+    font-size: 18px;
+  }
+  .message {
+    margin-bottom: 1rem;
+  }
+  .contact-btn button {
+    width: 8.5rem;
+    height: 2.5rem;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .border-tl {
+    inset: 2.5rem auto auto 2rem; 
+  }
+  .border-br {
+    inset: auto 2rem 2.5rem auto;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .title h1 {
+    font-size: 40px;
+    letter-spacing: 4px;
+  }
+  .title h3 {
+    font-size: 20px;
+  }
+  .name,
+  .email {
+    font-size: 17px;
+  }
+  .name::placeholder,
+  .email::placeholder {
+    font-size: 14px;
+  }
+  .message,
+  .message::placeholder {
+    font-size: 17px;
+  }
+  .contact-btn button {
+    width: 8rem;
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .title h1 {
+    font-size: 30px;
+    letter-spacing: auto;
+  }
+  .title h3 {
+    font-size: 19px;
+  }
+  .name,
+  .email {
+    font-size: 16px;
+  }
+  .name::placeholder,
+  .email::placeholder {
+    font-size: 13px;
+  }
+  .message,
+  .message::placeholder {
+    font-size: 16px;
+  }
+  .contact-btn button {
+    font-size: 16px;
+  }
 }

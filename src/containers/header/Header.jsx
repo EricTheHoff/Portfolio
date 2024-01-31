@@ -1,70 +1,76 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios';
+import React, { useState } from 'react'
+import toast from 'react-hot-toast'
+import axios from 'axios'
 import './header.css'
-import Project from '../../components/project/Project.jsx';
-import previous from '../../assets/previous.svg'
-import next from '../../assets/next.svg'
 
 const Header = () => {
-  const [currentCard, setCurrentCard] = useState(0)
-  const [cardArray, setCardArray] = useState([0, 1, 2])
-  // console.log(currentCard)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
 
-  const prevClicked = () => {
-    setCurrentCard((prevCard) => (prevCard === 0 ? 2 : prevCard - 1))
-  }
+  const sendEmail = () => {
+    const dataForEmail = {
+      name,
+      email,
+      message,
+    }
 
-  const nextClicked = () => {
-    setCurrentCard((prevCard) => (prevCard === 2 ? 0 : prevCard + 1))
-  }
+    axios.post('/email', dataForEmail)
 
-  // useEffect(() => {
-  //   console.log(currentCard)
-  // },[currentCard])
+    .then(() => {
+      toast(`Your email has been sent. Thank you!`)
+    })
 
-  const getCardOrder = (idx) => {
-    // [0, 1, 2] => order 1, [1, 2, 0] => order 2, 
-    const cardOrder = [currentCard, (currentCard + 1) % 3, (currentCard + 2) % 3]
-    return cardOrder.indexOf(idx) + 1
-  }
-
-  const getVisibleIndices = () => {
-    return [currentCard, (currentCard + 1) % 3]
+    .catch((error) => {
+      console.error(`The following error has occurred: ${error}`)
+    })
   }
 
   return (
     <div className='container section__padding'>
 
-      <div className='card-container'>
-        <div className='prev' onClick={prevClicked}>
-          <img src={previous} alt='previous'/>
+      <div className='border-tl'></div>
+
+      <div className='content'>
+        <div className='title'>
+          <h1>Want to reach out?</h1>
+          <h3>Feel free to send me any questions or proposals you have!</h3>
         </div>
 
-        <div className='card-grid'>
-          {cardArray.map((idx) => (
-            <div
-              key={idx}
-              className='card'
-              style={{
-                order: getCardOrder(idx),
-                display: getVisibleIndices().includes(idx) ? 'flex' : 'none',
-              }}
-            >
-              <Project
-                index={idx}
-              />
-            </div>
-          ))}
-        </div>
+        <form className='form' onSubmit={(e) => {
+          e.preventDefault()
+          sendEmail()
+        }}>
+          <div className='top'>
+            <input
+              className='name'
+              type='text'
+              placeholder='Your Name...'
+              onChange={(e) => setName(e.target.value)}>
+            </input>
+            <input
+              className='email'
+              type='email'
+              placeholder='Your Email...'
+              onChange={(e) => setEmail(e.target.value)}>
+            </input>
+          </div>
+          <div className='bottom'>
+            <textarea
+              className='message'
+              placeholder="Hi, I'm reaching out out to you because I'm interested in designing a site for my new company. When could we discuss this further?"
+              onChange={(e) => setMessage(e.target.value)}>
+            </textarea>
+          </div>
 
-        <div className='next' onClick={nextClicked}>
-          <img src={next} alt='next'/>
-        </div>
+          <div className='contact-btn'>
+            <button type='submit'>Email</button>
+          </div>
+        </form>
+
       </div>
 
-      <div className='page-button'>
-        <button type='button'>Back</button>
-      </div>
+      <div className='border-br'></div>
 
     </div>
   )

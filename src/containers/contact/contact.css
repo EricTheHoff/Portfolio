@@ -1,0 +1,301 @@
+/* Container for Contact page. */
+.eh__contact {
+  position: relative;
+  transition: all .5s ease-in-out;
+}
+
+/* Divs for border elements. */
+.eh__contact-border-top-left,
+.eh__contact-border-bottom-right {
+  width: 12rem;
+  height: 12rem;
+  position: absolute;
+  border-image-slice: 1;
+  border-image-source: var(--gradient-bar);
+  transition: all .5s ease-in-out;
+}
+
+.eh__contact-border-top-left {
+  border-top: 8px solid;
+  border-left: 8px solid;
+  inset: 2.5rem auto auto 6rem;
+}
+
+.eh__contact-border-bottom-right {
+  border-bottom: 8px solid;
+  border-right: 8px solid;
+  inset: auto 6rem 2.5rem auto;
+}
+
+/* Container for title and form. */
+.eh__contact-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.eh__contact-title {
+  text-align: center;
+  text-transform: uppercase;
+  transition: all .5s ease-in-out;
+}
+
+.eh__contact-title h1 {
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: 8px;
+
+  margin-bottom: 1rem;
+}
+
+.eh__contact-title h3 {
+  color: var(--color-subtitle);
+  font-size: 28px;
+  font-weight: 700;
+
+  margin-bottom: 3rem;
+}
+
+/* Containers for rows within the form. */
+.eh__contact-form-top-row,
+.eh__contact-form-bottom-row {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+/* Provide gap between Name and Email fields. */
+.eh__contact-form-name {
+  margin-right: 2rem;
+}
+
+.eh__contact-form-message {
+  width: 82%;
+  height: 20rem;
+  border: 5px solid #9191E9;
+  background: #C3C3E8;
+  font-family: var(--font-family);
+  font-size: 20px;
+  resize: none;
+}
+
+.eh__contact-form-name,
+.eh__contact-form-email,
+.eh__contact-form-message {
+  border-radius: 10px;
+  color: #1B1B1B;
+  font-style: italic;
+  transition: transform .5s ease-in-out;
+
+  padding: 1.5rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.eh__contact-form-name,
+.eh__contact-form-email {
+  width: 40%;
+  height: 3rem;
+  border: 5px solid #2D898B;
+  background: #79D1D3;
+  font-size: 18px;
+  outline: none;
+  transition: transform .5s ease-in-out;
+}
+
+/* Scale fields on focus. */
+.eh__contact-form-name:focus,
+.eh__contact-form-email:focus,
+.eh__contact-form-message:focus {
+  transform: scale(1.05);
+}
+
+.eh__contact-form-name::placeholder,
+.eh__contact-form-email::placeholder,
+.eh__contact-form-message::placeholder {
+  color: #1B1B1B;
+  font-size: 18px;
+  font-style: italic;
+  opacity: .85;
+}
+
+.eh__contact-form-message::placeholder {
+  font-size: 20px;
+}
+
+.eh__contact-btn {
+  text-align: center;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+.eh__contact-btn button {
+  width: 10.5rem;
+  height: 3.5rem;
+  border: none;
+  border-radius: 50px;
+  color: #FFF;
+  background: linear-gradient(var(--color-1), var(--color-2));
+  font-family: var(--font-family);
+  font-size: 25px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+  --color-1 .5s ease-in-out,
+  --color-2 .5s ease-in-out,
+  transform .5s ease-in-out;
+}
+
+/* Color props defined to help smoothly transition gradient colors. */
+@property --color-1 {
+  syntax: '<color>';
+  initial-value: #2D898B;
+  inherits: false;
+}
+
+@property --color-2 {
+  syntax: '<color>';
+  initial-value: #9191E9;
+  inherits: false;
+}
+
+/* Hover effects for devices that can hover with a mouse/stylus. */
+@media (hover: hover) and (pointer: fine) {
+  .eh__contact:hover {
+    .eh__contact-title,
+    .eh__contact-border-top-left,
+    .eh__contact-border-bottom-right {
+      transform: scale(1.05);
+    }
+    .eh__contact-form-top-row,
+    .eh__contact-form-bottom-row,
+    .eh__contact-btn {
+      opacity: 1;
+    }
+
+  }
+  .eh__contact-btn button:hover {
+    --color-1: #9191E9;
+    --color-2: #2D898B;
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .eh__contact-form-top-row,
+  .eh__contact-form-bottom-row,
+  .eh__contact-btn {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .eh__contact-border-top-left,
+  .eh__contact-border-bottom-right {
+    width: 10rem;
+    height: 10rem;
+  }
+  .eh__contact-title h1 {
+    font-size: 60px;
+  }
+  .eh__contact-title h3 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .eh__contact-border-top-left,
+  .eh__contact-border-bottom-right {
+    width: 6rem;
+    height: 6rem;
+  }
+  .eh__contact-border-top-left {
+    inset: 2.5rem auto auto 4rem; 
+  }
+  .eh__contact-border-bottom-right {
+    inset: auto 4rem 2.5rem auto;
+  }
+  .eh__contact-title h1 {
+    font-size: 50px;
+    letter-spacing: 6px;
+  }
+  .eh__contact-title h3 {
+    font-size: 22px;
+
+    margin-bottom: 2rem;
+  }
+  .eh__contact-form-name {
+    margin-right: 1rem;
+  }
+  .eh__contact-form-message {
+    margin-bottom: 1rem;
+  }
+  .eh__contact-form-name,
+  .eh__contact-form-email {
+    margin-bottom: 1rem;
+  }
+  .eh__contact-form-message,
+  .eh__contact-form-message::placeholder {
+    font-size: 18px;
+  }
+  .eh__contact-btn button {
+    width: 8.5rem;
+    height: 2.5rem;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* Adjusting inset to match padding adjustments in App.css */
+  .eh__contact-border-top-left {
+    inset: 2.5rem auto auto 2rem; 
+  }
+  .eh__contact-border-bottom-right {
+    inset: auto 2rem 2.5rem auto;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .eh__contact-title h1 {
+    font-size: 40px;
+    letter-spacing: 4px;
+  }
+  .eh__contact-title h3 {
+    font-size: 20px;
+  }
+  .eh__contact-form-name,
+  .eh__contact-form-email,
+  .eh__contact-form-message,
+  .eh__contact-form-message::placeholder,
+  .eh__contact-btn button {
+    font-size: 17px;
+  }
+  .eh__contact-form-name::placeholder,
+  .eh__contact-form-email::placeholder {
+    font-size: 14px;
+  }
+  .eh__contact-btn button {
+    width: 8rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .eh__contact-title h1 {
+    font-size: 30px;
+    letter-spacing: auto;
+  }
+  .eh__contact-title h3 {
+    font-size: 19px;
+  }
+  .eh__contact-form-name,
+  .eh__contact-form-email,
+  .eh__contact-form-message,
+  .eh__contact-form-message::placeholder,
+  .eh__contact-btn button {
+    font-size: 16px;
+  }
+  .eh__contact-form-name::placeholder,
+  .eh__contact-form-email::placeholder {
+    font-size: 13px;
+  }
+}

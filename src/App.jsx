@@ -1,20 +1,34 @@
 import React from 'react';
 import { Header, Home, WID, Contact, Footer, Projects } from './containers/index.js';
 import { Navbar, Project } from './components/index.js';
+import { Toaster } from 'react-hot-toast'
 import './app.css'
 
 const App = () => {
   return (
     <div className='App'>
-          <Navbar/>
-          {/* <Header/> */}
-          {/* <Projects/> */}
-          
-          <Home/>
-          <WID/>
-          {/* <Contact/> */}
+      <Toaster
+        toastOptions={{
+          duration: 4000,
+          style: {
+            border: 'none',
+            background: '#9191E9',
+            color: '#FFF',
+            fontFamily: 'var(--font-family)',
+            fontSize: '18px',
+            padding: '1rem',
+          }
+        }}
+      />
+      <Navbar/>
+      {/* <Projects/> */}
+      
+      <Home/>
+      <WID/>
+      {/* <Header/> */}
+      <Contact/>
 
-          {/* <Footer/> */}
+      {/* <Footer/> */}
     </div>
   )
 }
