@@ -44,24 +44,24 @@ const Contact = () => {
         }}>
           <div className='eh__contact-form-top-row'>
             <input
-            className='eh__contact-form-name'
-            type='text'
-            placeholder='Your Name...'
-            onChange={(e) => setName(e.target.value)}>
+              className='eh__contact-form-name'
+              type='text'
+              placeholder='Your Name...'
+              onChange={(e) => setName(e.target.value)}>
             </input>
             <input
-            className='eh__contact-form-email'
-            type='email'
-            placeholder='Your Email...'
-            onChange={(e) => setEmail(e.target.value)}>
+              className='eh__contact-form-email'
+              type='email'
+              placeholder='Your Email...'
+              onChange={(e) => setEmail(e.target.value)}>
             </input>
           </div>
 
           <div className='eh__contact-form-bottom-row'>
             <textarea
-            className='eh__contact-form-message'
-            placeholder="Hi, I'm reaching out out to you because I'm interested in designing a site for my new company. When could we discuss this further?"
-            onChange={(e) => setMessage(e.target.value)}>
+              className='eh__contact-form-message'
+              placeholder="Hi, I'm reaching out out to you because I'm interested in designing a site for my new company. When could we discuss this further?"
+              onChange={(e) => setMessage(e.target.value)}>
             </textarea>
           </div>
 
