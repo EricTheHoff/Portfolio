@@ -56,29 +56,13 @@
   border: none;
   border-radius: 50px;
   color: #FFF;
-  background: linear-gradient(var(--color-1), var(--color-2));
+  background: linear-gradient(var(--color-01), var(--color-02));
   font-family: var(--font-family);
   font-size: 25px;
   font-weight: 500;
   text-transform: uppercase;
   cursor: pointer;
-  transition:
-    --color-1 .5s ease-in-out,
-    --color-2 .5s ease-in-out,
-    transform .5s ease-in-out;
-}
-
-/* Color props defined to help smoothly transition gradient colors. */
-@property --color-1 {
-  syntax: '<color>';
-  initial-value: #2D898B;
-  inherits: false;
-}
-
-@property --color-2 {
-  syntax: '<color>';
-  initial-value: #9191E9;
-  inherits: false;
+  transition: transform .5s ease-in-out;
 }
 
 @media screen and (min-width: 1280px) {
@@ -88,8 +72,6 @@
       transform: scale(1.4);
     }
     .eh__projects-btn button:hover {
-      --color-1: #9191E9;
-      --color-2: #2D898B;
       transform: scale(1.1);
     }
   }

@@ -44,23 +44,28 @@ const Contact = () => {
         }}>
           <div className='eh__contact-form-top-row'>
             <input
+              name='name'
               className='eh__contact-form-name'
               type='text'
               placeholder='Your Name...'
               required
+              autoComplete='given-name'
               onChange={(e) => setName(e.target.value)}>
             </input>
             <input
+              name='email'
               className='eh__contact-form-email'
               type='email'
               placeholder='Your Email...'
               required
+              autoComplete='email'
               onChange={(e) => setEmail(e.target.value)}>
             </input>
           </div>
 
           <div className='eh__contact-form-bottom-row'>
             <textarea
+              name='message'
               className='eh__contact-form-message'
               placeholder="Hi, I'm reaching out out to you because I'm interested in designing a site for my new company. When could we discuss this further?"
               required

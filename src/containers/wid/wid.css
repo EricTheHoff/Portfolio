@@ -4,8 +4,8 @@
   justify-content: space-between;
   position: relative;
   /* Setting min-height so absolutely-positioned items don't overlap other components' content. */
-  min-height: 50rem;
-  transition: min-height .5s ease-in-out;
+  min-height: 55rem;
+  transition: min-height 1s ease-in-out;
 
   margin-bottom: 3rem;
 }
@@ -123,15 +123,12 @@
   border: none;
   border-radius: 50px;
   color: #FFF;
-  background: linear-gradient(var(--color-1), var(--color-2));
+  background: linear-gradient(var(--color-01), var(--color-02));
   font-family: var(--font-family);
   font-size: 25px;
   font-weight: 500;
   text-transform: uppercase;
-  transition:
-    --color-1 .5s ease-in-out,
-    --color-2 .5s ease-in-out,
-    transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
 }
 
 .eh__wid-image {
@@ -142,19 +139,6 @@
   width: 130%;
 
   margin-top: -5.5rem;
-}
-
-/* Color props defined to help smoothly transition gradient colors. */
-@property --color-1 {
-  syntax: '<color>';
-  initial-value: #2D898B;
-  inherits: false;
-}
-
-@property --color-2 {
-  syntax: '<color>';
-  initial-value: #9191E9;
-  inherits: false;
 }
 
 /* Devices as small as screen width 1280px and up will have hover effects. */
@@ -188,8 +172,6 @@
       }
     }
     .eh__wid-text__content button:hover {
-      --color-1: #9191E9;
-      --color-2: #2D898B;
       transform: scale(1.1);
     }
   }
@@ -258,7 +240,7 @@
 
 @media screen and (max-width: 700px) {
   .eh__wid {
-    min-height: 63rem;
+    min-height: 67rem;
   }
   .eh__wid.show-projects {
     min-height: 89rem;
@@ -328,7 +310,7 @@
     max-height: 20rem;
   }
   .eh__wid-image {
-    margin-top: 17rem;
+    margin-top: 19rem;
   }
   .eh__wid-text {
     margin-left: auto;

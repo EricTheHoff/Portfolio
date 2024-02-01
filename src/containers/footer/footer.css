@@ -1,0 +1,92 @@
+/* Container for the footer. */
+.eh__footer {
+  position: relative;
+  background: rgba(145 145 233 / 50%);
+
+  margin-top: 30rem;
+}
+
+.eh__footer-ty {
+  position: absolute;
+  font-size: 26px;
+  top: 15rem;
+}
+
+/* Container for links and contact info. */
+.eh__footer-content {
+  height: 35rem;
+  display: flex;
+  align-items: center;
+}
+
+.eh__footer-contact-info,
+.eh__footer-links {
+  flex: 1;
+}
+
+.eh__footer-links {
+  text-align: right;
+}
+
+.eh__footer-contact-info p,
+.eh__footer-links p {
+  font-size: 19px;
+
+  margin-bottom: .5rem;
+}
+
+.eh__footer-links a {
+  transition: font-size .5s ease-in-out;
+}
+
+/* Devices as small as screen width 1280px and up will have hover effects. */
+@media screen and (min-width: 1280px) {
+  /* Hover effects for devices that can hover with a mouse/stylus. */
+  @media (hover: hover) and (pointer: fine) {
+    .eh__footer-links a:hover {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .eh__footer {
+    margin-top: 20rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .eh__footer-ty {
+    top: 10rem;
+  }
+  .eh__footer-content {
+    height: 25rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .eh__footer-ty {
+    top: 7rem;
+  }
+  .eh__footer-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .eh__footer-contact-info,
+  .eh__footer-links {
+    flex: 0;
+  }
+  .eh__footer-contact-info {
+    margin-bottom: 2rem;
+  }
+  .eh__footer-links {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .eh__footer {
+    margin-top: 15rem;
+  }
+}

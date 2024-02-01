@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header, Home, WID, Contact, Footer, Projects } from './containers/index.js';
-import { Navbar, Project } from './components/index.js';
+import { Home, WID, Contact, Footer } from './containers/index.js';
+import { Navbar } from './components/index.js';
 import { Toaster } from 'react-hot-toast'
 import './app.css'
 
@@ -21,14 +21,10 @@ const App = () => {
         }}
       />
       <Navbar/>
-      {/* <Projects/> */}
-      
       <Home/>
       <WID/>
-      {/* <Header/> */}
       <Contact/>
-
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   )
 }

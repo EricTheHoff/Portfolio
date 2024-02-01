@@ -1,77 +1,24 @@
-import React, { useState } from 'react'
-import toast from 'react-hot-toast'
-import axios from 'axios'
+import React from 'react'
 import './header.css'
 
 const Header = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-
-  const sendEmail = () => {
-    const dataForEmail = {
-      name,
-      email,
-      message,
-    }
-
-    axios.post('/email', dataForEmail)
-
-    .then(() => {
-      toast(`Your email has been sent. Thank you!`)
-    })
-
-    .catch((error) => {
-      console.error(`The following error has occurred: ${error}`)
-    })
-  }
-
   return (
-    <div className='container section__padding'>
-
-      <div className='border-tl'></div>
-
-      <div className='content'>
-        <div className='title'>
-          <h1>Want to reach out?</h1>
-          <h3>Feel free to send me any questions or proposals you have!</h3>
+    <div className='container section__padding' id='more'>
+      <div className='title'>
+        <h4>Thank you!</h4>
+      </div>
+      <div className='flex'>
+        <div className='contact'>
+          <p>eric.peter.hoffman@gmail.com</p>
+          <p>(801) 404-9452</p>
         </div>
 
-        <form className='form' onSubmit={(e) => {
-          e.preventDefault()
-          sendEmail()
-        }}>
-          <div className='top'>
-            <input
-              className='name'
-              type='text'
-              placeholder='Your Name...'
-              onChange={(e) => setName(e.target.value)}>
-            </input>
-            <input
-              className='email'
-              type='email'
-              placeholder='Your Email...'
-              onChange={(e) => setEmail(e.target.value)}>
-            </input>
-          </div>
-          <div className='bottom'>
-            <textarea
-              className='message'
-              placeholder="Hi, I'm reaching out out to you because I'm interested in designing a site for my new company. When could we discuss this further?"
-              onChange={(e) => setMessage(e.target.value)}>
-            </textarea>
-          </div>
-
-          <div className='contact-btn'>
-            <button type='submit'>Email</button>
-          </div>
-        </form>
-
+        <div className='links'>
+          <p><a href='https://www.linkedin.com/in/erichoffman98/' target='blank'>LinkedIn</a></p>
+          <p><a href='https://github.com/EricTheHoff' target='blank'>Github</a></p>
+          <p><a href='https://drive.google.com/file/d/1aoFr82uaBhfC5eLwWI1VFTM-U3XY9vEW/view?usp=sharing' target='blank'>View my Resume</a></p>
+        </div>
       </div>
-
-      <div className='border-br'></div>
-
     </div>
   )
 }

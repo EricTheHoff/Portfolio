@@ -10,6 +10,9 @@
   --gradient-bar-reversed: linear-gradient(180deg, #9191E9 0.88%, #2D898B 100%);
   --gradient-navbar: linear-gradient(90deg, rgba(27, 27, 27, 1) 31%, rgba(45, 137, 139, 1) 50%, rgba(145, 145, 233, 1) 100%);
 
+  --color-01: #2D898B;
+  --color-02: #9191E9;
+  
   --color-bg: #1B1B1B;
   --color-footer: rgba(145, 145, 233, 0.50);
   --color-text: #FFF;
