@@ -1,28 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Projects from '../projects/Projects.jsx'
 import widImage from '../../assets/widImage.svg'
 import './wid.css'
 
 const WID = () => {
   const [showProjects, setShowProjects] = useState(false)
-  const [width, setWidth] = useState(window.innerWidth)
-
-  // useEffect hook to determine the screensize of the viewing device. Using the screensize to dynamically assign CSS classes for .eh__wid border management.
-  useEffect(() => {
-    const screenResize = () => {
-      setWidth(window.innerWidth)
-    }
-    // Event listener for when the screen is resized.
-    window.addEventListener('resize', screenResize)
-
-    return () => {
-      // Cleanup event listener to prevent memory leakage.
-      window.removeEventListener('resize', screenResize)
-    }
-  },[])
 
   return (
-    <div className={`eh__wid section__padding ${width <= 700 && showProjects ? 'mobile' : ''}`} id='wid'>
+    // show-projects adjusts the border of eh__wid to encompass the contents of eh__projects.
+    <div className={`eh__wid section__padding${showProjects ? ' show-projects' : ''}`} id='wid'>
       <div className={`eh__wid-before ${showProjects ? 'transition-out' : ''}`}>
 
         <div className='eh__wid-image'>

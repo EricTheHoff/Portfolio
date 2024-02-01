@@ -90,11 +90,11 @@ const Projects = ({ setShowProjects }) => {
             </div>
 
             <div className='eh__projects-cards-nav-btn'>
-              <div className='eh__projects-cards-prev' onClick={prevClicked}>
+              <div className={`eh__projects-cards-prev ${cardArray.length < 3 ? 'hide-btn' : ''}`} onClick={prevClicked}>
                 <img src={previous} alt='Previous'/>
               </div>
 
-              <div className='eh__projects-cards-next' onClick={nextClicked}>
+              <div className={`eh__projects-cards-next ${cardArray.length < 3 ? 'hide-btn' : ''}`} onClick={nextClicked}>
                 <img src={next} alt='Next'/>
               </div>
             </div>
@@ -102,7 +102,7 @@ const Projects = ({ setShowProjects }) => {
           </div>
         :
           <div className='eh__projects-cards'>
-            <div className='eh__projects-cards-prev' onClick={prevClicked}>
+            <div className={`eh__projects-cards-prev ${cardArray.length < 3 ? 'hide-btn' : ''}`} onClick={prevClicked}>
               <img src={previous} alt='Previous'/>
             </div>
 
@@ -130,7 +130,7 @@ const Projects = ({ setShowProjects }) => {
               })}
             </div>
 
-            <div className='eh__projects-cards-next' onClick={nextClicked}>
+            <div className={`eh__projects-cards-next ${cardArray.length < 3 ? 'hide-btn' : ''}`} onClick={nextClicked}>
               <img src={next} alt='Next'/>
             </div>
           </div>

@@ -5,9 +5,14 @@
   position: relative;
   /* Setting min-height so absolutely-positioned items don't overlap other components' content. */
   min-height: 50rem;
-  /* border: 3px solid white; */
+  transition: min-height .5s ease-in-out;
 
   margin-bottom: 3rem;
+}
+
+/* Height for container when eh__projects from Projects.jsx is being shown. */
+.eh__wid.show-projects {
+  min-height: 60rem;
 }
 
 /* Container for default page. */
@@ -16,8 +21,7 @@
   justify-content: space-between;
   position: absolute;
   /* Using 4 and 6rem to match right padding for page content. */
-  top: 4rem;
-  right: 6rem;
+  inset: 4rem 6rem auto auto;
   /* Sets space between image and text. */
   width: 93%;
   z-index: 1;
@@ -33,8 +37,7 @@
 /* Container for Projects page. */
 .eh__wid-after {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0 auto auto 0;
   width: 100%;
   opacity: 0;
   z-index: 0;
@@ -60,41 +63,6 @@
   display: flex;
 
   margin-left: 3rem;
-}
-
-/* Hover effects for devices that can hover with a mouse/stylus. */
-@media (hover: hover) and (pointer: fine) {
-  .eh__wid:hover {
-    .eh__wid-text {
-      transform: scale(1.05);
-    }
-    .eh__wid-text__bar {
-      height: 100%;
-    }
-    .eh__wid-text__content h1 {
-      transform: scale(1.05);
-    }
-    .eh__wid-text__content h2 {
-      margin-top: 8rem;
-    }
-    .eh__wid-text__content button {
-      cursor: pointer;
-    }
-    .eh__wid-text__content p {
-      opacity: 1;
-    }
-    .eh__wid-btn {
-      opacity: 1;
-    }
-    .eh__wid-image {
-      opacity: 1;
-    }
-  }
-  .eh__wid-text__content button:hover {
-    --color-1: #9191E9;
-    --color-2: #2D898B;
-    transform: scale(1.1);
-  }
 }
 
 /* Colored bar. */
@@ -148,19 +116,6 @@
   margin: 2rem 0 0 10rem;
 }
 
-/* Color props defined to help smoothly transition gradient colors. */
-@property --color-1 {
-  syntax: '<color>';
-  initial-value: #2D898B;
-  inherits: false;
-}
-
-@property --color-2 {
-  syntax: '<color>';
-  initial-value: #9191E9;
-  inherits: false;
-}
-
 /* Styling for button. */
 .eh__wid-text__content button {
   width: 10.5rem;
@@ -189,6 +144,57 @@
   margin-top: -5.5rem;
 }
 
+/* Color props defined to help smoothly transition gradient colors. */
+@property --color-1 {
+  syntax: '<color>';
+  initial-value: #2D898B;
+  inherits: false;
+}
+
+@property --color-2 {
+  syntax: '<color>';
+  initial-value: #9191E9;
+  inherits: false;
+}
+
+/* Devices as small as screen width 1280px and up will have hover effects. */
+@media screen and (min-width: 1280px) {
+  /* Hover effects for devices that can hover with a mouse/stylus. */
+  @media (hover: hover) and (pointer: fine) {
+    .eh__wid:hover {
+      .eh__wid-text {
+        transform: scale(1.05);
+      }
+      .eh__wid-text__bar {
+        height: 100%;
+      }
+      .eh__wid-text__content h1 {
+        transform: scale(1.05);
+      }
+      .eh__wid-text__content h2 {
+        margin-top: 8rem;
+      }
+      .eh__wid-text__content button {
+        cursor: pointer;
+      }
+      .eh__wid-text__content p {
+        opacity: 1;
+      }
+      .eh__wid-btn {
+        opacity: 1;
+      }
+      .eh__wid-image {
+        opacity: 1;
+      }
+    }
+    .eh__wid-text__content button:hover {
+      --color-1: #9191E9;
+      --color-2: #2D898B;
+      transform: scale(1.1);
+    }
+  }
+}
+
 @media screen and (max-width: 1367px) {
   /* Adjusting bar height to account for margin adjustments. */
   .eh__wid-text__bar {
@@ -207,6 +213,10 @@
   /* Adjusting height of parent container to prevent overlapping of other components. */
   .eh__wid {
     min-height: 95rem;
+    margin-bottom: 0;
+  }
+  .eh__wid.show-projects {
+    min-height: 83rem;
   }
   /* Altering flex direction to stack elements in columns. */
   .eh__wid-before {
@@ -216,7 +226,7 @@
   .eh__wid-image {
     opacity: 1;
 
-    margin-top: 8rem;
+    margin-top: 2rem;
   }
   .eh__wid-text {
     align-self: flex-end;
@@ -245,10 +255,10 @@
 
 @media screen and (max-width: 700px) {
   .eh__wid {
-    min-height: 67rem;
+    min-height: 63rem;
   }
-  .eh__wid.mobile {
-    min-height: 92rem;
+  .eh__wid.show-projects {
+    min-height: 89rem;
   }
   .eh__wid-text,
   .eh__wid-image {
@@ -295,7 +305,7 @@
 /* Slight overlapping occurs between 470 - 480px, using this query to resolve that. */
 @media screen and (max-width: 480px) {
   .eh__wid-image {
-    margin-top: 11rem;
+    margin-top: 12rem;
   }
   .eh__wid-text__bar {
     height: 33rem;
@@ -303,6 +313,9 @@
 }
 
 @media screen and (max-width: 470px) {
+  .eh__wid {
+    min-height: 60rem;
+  }
   .eh__wid-before {
     right: 2rem;
   }
@@ -312,7 +325,7 @@
     max-height: 20rem;
   }
   .eh__wid-image {
-    margin-top: 25rem;
+    margin-top: 17rem;
   }
   .eh__wid-text {
     margin-left: auto;

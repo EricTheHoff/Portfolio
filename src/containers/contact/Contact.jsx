@@ -47,12 +47,14 @@ const Contact = () => {
               className='eh__contact-form-name'
               type='text'
               placeholder='Your Name...'
+              required
               onChange={(e) => setName(e.target.value)}>
             </input>
             <input
               className='eh__contact-form-email'
               type='email'
               placeholder='Your Email...'
+              required
               onChange={(e) => setEmail(e.target.value)}>
             </input>
           </div>
@@ -61,6 +63,7 @@ const Contact = () => {
             <textarea
               className='eh__contact-form-message'
               placeholder="Hi, I'm reaching out out to you because I'm interested in designing a site for my new company. When could we discuss this further?"
+              required
               onChange={(e) => setMessage(e.target.value)}>
             </textarea>
           </div>
