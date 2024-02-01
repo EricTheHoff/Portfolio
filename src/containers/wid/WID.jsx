@@ -9,7 +9,7 @@ const WID = () => {
   return (
     // show-projects adjusts the border of eh__wid to encompass the contents of eh__projects.
     <div className={`eh__wid section__padding${showProjects ? ' show-projects' : ''}`} id='wid'>
-      <div className={`eh__wid-before ${showProjects ? 'transition-out' : ''}`}>
+      <div className={`eh__wid-before${showProjects ? ' transition-out' : ''}`}>
 
         <div className='eh__wid-image'>
           <img src={widImage} alt='placeholder'/>
@@ -35,7 +35,7 @@ const WID = () => {
 
       </div>
 
-      <div className={`eh__wid-after ${showProjects ? 'transition-in' : ''}`}>
+      <div className={`eh__wid-after${showProjects ? ' transition-in' : ''}`}>
         <Projects
           setShowProjects={setShowProjects}
         />

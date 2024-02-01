@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import portrait from '../../assets/portrait.png'
+import portrait from '../../assets/portrait.jpg'
 import homeImage from '../../assets/homeImage.svg'
 import './home.css'
 
@@ -58,8 +58,8 @@ const Home = () => {
       </div>
 
       <div className='eh__home-image'>
-        <img src={portrait} alt='placeholder'/>
-        <img src={homeImage} alt='placeholder'/>
+        <img src={portrait} alt='Eric'/>
+        <img src={homeImage} alt='Background'/>
       </div>
       
     </div>

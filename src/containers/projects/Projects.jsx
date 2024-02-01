@@ -38,6 +38,7 @@ const Projects = ({ setShowProjects }) => {
     }
   },[])
 
+  // The prev/nextClicked functions update the currentCard variable, and resets it once it reaches the limit of cardArray.length.
   const prevClicked = () => {
     setCurrentCard((prevCard) => (prevCard === 0 ? (cardArray.length - 1) : prevCard - 1))
   }
@@ -90,11 +91,11 @@ const Projects = ({ setShowProjects }) => {
             </div>
 
             <div className='eh__projects-cards-nav-btn'>
-              <div className={`eh__projects-cards-prev ${cardArray.length < 3 ? 'hide-btn' : ''}`} onClick={prevClicked}>
+              <div className={`eh__projects-cards-prev${cardArray.length < 3 ? ' hide-btn' : ''}`} onClick={prevClicked}>
                 <img src={previous} alt='Previous'/>
               </div>
 
-              <div className={`eh__projects-cards-next ${cardArray.length < 3 ? 'hide-btn' : ''}`} onClick={nextClicked}>
+              <div className={`eh__projects-cards-next${cardArray.length < 3 ? ' hide-btn' : ''}`} onClick={nextClicked}>
                 <img src={next} alt='Next'/>
               </div>
             </div>
@@ -102,7 +103,7 @@ const Projects = ({ setShowProjects }) => {
           </div>
         :
           <div className='eh__projects-cards'>
-            <div className={`eh__projects-cards-prev ${cardArray.length < 3 ? 'hide-btn' : ''}`} onClick={prevClicked}>
+            <div className={`eh__projects-cards-prev${cardArray.length < 3 ? ' hide-btn' : ''}`} onClick={prevClicked}>
               <img src={previous} alt='Previous'/>
             </div>
 
@@ -130,7 +131,7 @@ const Projects = ({ setShowProjects }) => {
               })}
             </div>
 
-            <div className={`eh__projects-cards-next ${cardArray.length < 3 ? 'hide-btn' : ''}`} onClick={nextClicked}>
+            <div className={`eh__projects-cards-next${cardArray.length < 3 ? ' hide-btn' : ''}`} onClick={nextClicked}>
               <img src={next} alt='Next'/>
             </div>
           </div>
