@@ -29,6 +29,7 @@ const Contact = () => {
 
   return (
     <div className='eh__contact section__padding' id='contact'>
+      {/* Div for the colored top-left border. */}
       <div className='eh__contact-border-top-left'></div>
 
       <div className='eh__contact-content'>
@@ -80,6 +81,7 @@ const Contact = () => {
 
       </div>
 
+      {/* Div for the colored bottom-right border. */}
       <div className='eh__contact-border-bottom-right'></div>
     </div>
   )

@@ -6,12 +6,14 @@ sgMail.setApiKey(process.env.REACT_APP_SENDGRID_KEY)
 
 const controllerFunctions = {
 
+  // Queries DB for all projects and returns them in the response.
   getProjects: async (req, res) => {
     const projects = await Project.findAll()
 
     res.send(projects)
   },
 
+  // Sends an email via SendGrid.
   sendEmail: async (req, res) => {
     const { name, email, message } = req.body
 

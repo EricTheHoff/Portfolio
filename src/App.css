@@ -11,22 +11,13 @@
 body {
   background: var(--color-bg);
   font-family: var(--font-family);
-  color: #FFF;
+  color: var(--color-text);
 }
 
 a {
   /* This ensures that the color of anchor tags is either inherited or whatever the the initial value is. */
   color: unset;
   text-decoration: none;
-}
-
-.gradient__text {
-  background: var(--gradient-text);
-
-  /* This sets the fill of the text to be the gradient. */
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .section__padding {
@@ -36,44 +27,6 @@ a {
 .section__margin {
   margin: 4rem 6rem;
 }
-
-/* .scale-up-center {
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-.slide-out {
-  opacity: 0;
-  height: 0;
-  transform: translateX(-100%);
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out, height 0s 1s;
-}
-.slide-in {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
- @-webkit-keyframes scale-up-center {
-  0% {
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-@keyframes scale-up-center {
-  0% {
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-} */
 
 @media screen and (max-width: 700px) {
   .section__padding {

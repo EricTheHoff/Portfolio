@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize'
 
+// URI determined in model.js
 const connectToDB = async (dbURI) => {
   console.log(`Connecting to DB at: ${dbURI}`)
 

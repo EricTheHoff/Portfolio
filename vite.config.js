@@ -7,7 +7,5 @@ export default defineConfig({
   esbuild: {
     jsxFactory: 'React.createElement',
     jsxFragment: 'React.Fragment',
-    include: ['**/*.jsx', '**/*.tsx', '**/*.js', '**/*.ts'],
-    exclude: ['**/*.svg'],
   }
 })

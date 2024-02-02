@@ -31,19 +31,6 @@
   margin-right: auto;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .eh__navbar-links_logo:hover {
-    scale: 1.05;
-    border-image: var(--gradient-bar-reversed);
-    border-image-slice: 1;
-  }
-  .eh__navbar-links_container p:hover,
-  .eh__navbar-menu_container p:hover {
-    scale: 1.2;
-  }
-}
-
-
 .eh__navbar-links_logo p {
   display: table-cell;
   vertical-align: middle;
@@ -69,7 +56,6 @@
 
   margin: 0 4rem;
 }
-
 
 #final-link {
   margin: 0 0 0 4rem;
@@ -107,6 +93,22 @@
 
 .eh__navbar-menu_container p {
   margin: 1rem 0;
+}
+
+/* Devices as small as screen width 1280px and up will have hover effects. */
+@media screen and (min-width: 1280px) {
+  /* Hover effects for devices that can hover with a mouse/stylus. */
+  @media (hover: hover) and (pointer: fine) {
+    .eh__navbar-links_logo:hover {
+      scale: 1.05;
+      border-image: var(--gradient-bar-reversed);
+      border-image-slice: 1;
+    }
+    .eh__navbar-links_container p:hover,
+    .eh__navbar-menu_container p:hover {
+      scale: 1.2;
+    }
+  }
 }
 
 @media screen and (max-width: 1050px) {

@@ -137,7 +137,6 @@ const Projects = ({ setShowProjects }) => {
           </div>
       }
 
-
       <div className='eh__projects-btn'>
         <button type='button' onClick={() => setShowProjects(false)}>Back</button>
       </div>

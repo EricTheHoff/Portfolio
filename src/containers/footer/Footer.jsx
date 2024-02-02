@@ -4,6 +4,7 @@ import './footer.css'
 const Footer = () => {
   return (
     <div className='eh__footer section__padding' id='more'>
+      
       <div className='eh__footer-ty'>
         <h4>Thank you!</h4>
       </div>
@@ -20,6 +21,7 @@ const Footer = () => {
           <p><a href='https://drive.google.com/file/d/1aoFr82uaBhfC5eLwWI1VFTM-U3XY9vEW/view?usp=sharing' target='blank'>View My Resume</a></p>
         </div>
       </div>
+
     </div>
   )
 }

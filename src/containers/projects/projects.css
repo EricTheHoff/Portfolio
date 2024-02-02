@@ -55,7 +55,7 @@
   height: 3.5rem;
   border: none;
   border-radius: 50px;
-  color: #FFF;
+  color: var(--color-text);
   background: linear-gradient(var(--color-01), var(--color-02));
   font-family: var(--font-family);
   font-size: 25px;

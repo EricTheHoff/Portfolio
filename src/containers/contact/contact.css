@@ -60,7 +60,6 @@
 .eh__contact-form-bottom-row {
   display: flex;
   justify-content: center;
-  /* opacity: 0; */
   transition: opacity .5s ease-in-out;
 }
 
@@ -72,7 +71,7 @@
 .eh__contact-form-message {
   width: 82%;
   height: 20rem;
-  border: 5px solid #9191E9;
+  border: 5px solid var(--color-02);
   background: #C3C3E8;
   font-family: var(--font-family);
   font-size: 20px;
@@ -83,7 +82,7 @@
 .eh__contact-form-email,
 .eh__contact-form-message {
   border-radius: 10px;
-  color: #1B1B1B;
+  color: var(--color-bg);
   font-style: italic;
   outline: none;
   transition: transform .5s ease-in-out;
@@ -96,7 +95,7 @@
 .eh__contact-form-email {
   width: 40%;
   height: 3rem;
-  border: 5px solid #2D898B;
+  border: 5px solid var(--color-01);
   background: #79D1D3;
   font-size: 18px;
   transition: transform .5s ease-in-out;
@@ -112,7 +111,7 @@
 .eh__contact-form-name::placeholder,
 .eh__contact-form-email::placeholder,
 .eh__contact-form-message::placeholder {
-  color: #1B1B1B;
+  color: var(--color-bg);
   font-size: 18px;
   font-style: italic;
   opacity: .85;
@@ -133,7 +132,7 @@
   height: 3.5rem;
   border: none;
   border-radius: 50px;
-  color: #FFF;
+  color: var(--color-text);
   background: linear-gradient(var(--color-01), var(--color-02));
   font-family: var(--font-family);
   font-size: 25px;

@@ -22,30 +22,6 @@
   margin-right: 3rem;
 }
 
-/* Hover effects for devices that can hover with a mouse/stylus. */
-@media (hover: hover) and (pointer: fine) {
-  .eh__home:hover {
-    .eh__home-text {
-      transform: scale(1.05);
-    }
-    .eh__home-text__bar {
-      height: 105%;
-    }
-    .eh__home-text__content h1 {
-      transform: scale(1.05);
-    };
-    .eh__home-text__content h2 {
-      margin-top: 2rem;
-    }
-    .eh__home-text__content p {
-      opacity: 1;
-    }
-    .eh__home-image {
-      opacity: 1;
-    }
-  }
-}
-
 /* Colored bar. */
 .eh__home-text__bar {
   background: var(--gradient-bar);
@@ -94,6 +70,10 @@
   margin-top: 1rem;
 }
 
+.eh__home-explore {
+  color: var(--color-02);
+}
+
 .eh__home-image {
   opacity: 0;
   position: relative;
@@ -129,7 +109,7 @@
         transform: scale(1.05);
       }
       .eh__home-text__bar {
-        height: 105%;
+        height: 100%;
       }
       .eh__home-text__content h1 {
         transform: scale(1.05);

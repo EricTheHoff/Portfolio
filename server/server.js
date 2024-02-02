@@ -6,10 +6,12 @@ import controllerFunctions from './controller.js'
 const app = express()
 const port = 8100
 
+//Middleware
 app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
+// Express routes
 app.get('/projects', controllerFunctions.getProjects)
 app.post('/email', controllerFunctions.sendEmail)
 

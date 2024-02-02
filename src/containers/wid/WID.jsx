@@ -12,16 +12,16 @@ const WID = () => {
       <div className={`eh__wid-before${showProjects ? ' transition-out' : ''}`}>
 
         <div className='eh__wid-image'>
-          <img src={widImage} alt='placeholder'/>
+          <img src={widImage} alt='Logos'/>
         </div>
 
         <div className='eh__wid-text'>
           <div className='eh__wid-text__content'>
             <h1>What I Do</h1>
-            <p>I create full-stack web applications and sites with JavaScript, HTML, and CSS,
-              and I have experience in multiple frameworks, including React and Express. I've also
-              utilized PostgreSQL for database management on previous projects.
-              Interested in seeing some of my work? Click the button to see more!
+            <p>I create full-stack web applications and sites with JavaScript, HTML, and CSS.
+              I'm experienced with the PERN stack, having built multiple projects using PostgreSQL,
+              Express, React, and Node.js.
+              Interested in seeing some of my work? Click the button below to see more!
             </p>
             <div className='eh__wid-btn'>
               <button type='button' onClick={() => setShowProjects(true)}>My Work</button>
