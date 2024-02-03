@@ -1,10 +1,16 @@
 import { Project } from './database/model.js'
 import sgMail from '@sendgrid/mail'
+import path from 'path'
 import 'dotenv/config'
 
 sgMail.setApiKey(process.env.REACT_APP_SENDGRID_KEY)
 
 const controllerFunctions = {
+
+  // Default route
+  home: (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'))
+  },
 
   // Queries DB for all projects and returns them in the response.
   getProjects: async (req, res) => {
