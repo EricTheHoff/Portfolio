@@ -12,7 +12,7 @@ const Projects = ({ setShowProjects }) => {
 
   // useEffect hook to get an array of projects from the database and populate cardArray.
   useEffect(() => {
-    axios.get('/projects')
+    axios.get('/api/v1/projects')
 
     .then((res) => {
       const results = res.data

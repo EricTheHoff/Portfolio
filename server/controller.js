@@ -1,4 +1,4 @@
-import { Project } from '../src/database/model.js'
+import { Project } from './database/model.js'
 import sgMail from '@sendgrid/mail'
 import 'dotenv/config'
 

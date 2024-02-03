@@ -16,7 +16,7 @@ const Contact = () => {
       message,
     }
 
-    axios.post('/email', dataForEmail)
+    axios.post('/api/v1/email', dataForEmail)
 
     .then(() => {
       toast(`Your email has been sent. Thank you!`)

@@ -2,7 +2,7 @@ import { DataTypes, Model } from 'sequelize'
 import connectToDB from './db.js'
 import util from 'util'
 
-const db = await connectToDB('postgresql:///ericthehoff')
+const db = await connectToDB()
 
 class Project extends Model {
   [util.inspect.custom]() {
