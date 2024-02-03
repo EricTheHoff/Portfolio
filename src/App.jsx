@@ -2,7 +2,7 @@ import React from 'react';
 import { Home, WID, Contact, Footer } from './containers/index.js';
 import { Navbar } from './components/index.js';
 import { Toaster } from 'react-hot-toast'
-import './app.css'
+import './App.css'
 
 const App = () => {
   return (
