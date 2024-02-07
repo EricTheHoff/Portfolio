@@ -234,7 +234,10 @@
     width: 75%;
   }
   .eh__wid-image {
-    margin-top: 4rem;
+    margin-top: 6rem;
+  }
+  .eh__wid-image img {
+    width: 115%;
   }
 }
 
@@ -253,9 +256,9 @@
   .eh__wid-image {
     margin-top: 9rem;
   }
-  .eh__wid-image img {
+  /* .eh__wid-image img {
     margin-right: 6rem;
-  }
+  } */
   .eh__wid-text {
     margin-left: 1rem;
   }
@@ -311,6 +314,9 @@
   }
   .eh__wid-image {
     margin-top: 19rem;
+  }
+  .eh__wid-image img {
+    width: 110%;
   }
   .eh__wid-text {
     margin-left: auto;
