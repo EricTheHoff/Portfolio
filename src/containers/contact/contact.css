@@ -123,7 +123,6 @@
 
 .eh__contact-btn {
   text-align: center;
-  opacity: 0;
   transition: opacity .5s ease-in-out;
 }
 
