@@ -18,7 +18,7 @@ const Footer = () => {
         <div className='eh__footer-links'>
           <p><a href='https://www.linkedin.com/in/erichoffman98/' target='blank'>LinkedIn</a></p>
           <p><a href='https://github.com/EricTheHoff' target='blank'>Github</a></p>
-          <p><a href='https://drive.google.com/file/d/1-kcdWcLwRs9JBk8Nrzv8ecjmhKjPmnCQ/view?usp=sharing' target='blank'>View My Resume</a></p>
+          <p><a href='https://drive.google.com/file/d/1XK2LlPSjYl_uiZJFS0c0d9IUjNLh0kkK/view?usp=sharing' target='blank'>View My Resume</a></p>
         </div>
       </div>
 
